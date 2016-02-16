@@ -1,5 +1,9 @@
 class ClientsController < ApplicationController
   
+  def index
+    @clients = Client.all
+  end
+
   def show
     @client = Client.find(params[:id])
   end
@@ -11,8 +15,11 @@ class ClientsController < ApplicationController
   def create
     @client = Client.new(client_params)
 
-    @client.save
-    redirect_to @client  
+    if @client.save
+      redirect_to @client
+    else
+      render 'new'
+    end  
   end
       
   private
