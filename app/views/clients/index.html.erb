@@ -1,3 +1,6 @@
 <% @clients.each do |client| %>
-  <h3><%= link_to "#{client.first_name} #{client.last_name}", client %></h3>
+  <tr>
+    <td><strong><%= link_to "#{client.first_name} #{client.middle_initial} #{client.last_name}", client_path(client) %></strong></td>
+    <td><%= link_to 'Edit Info', edit_client_path(client) %></td>
+  </tr>
 <% end %>
