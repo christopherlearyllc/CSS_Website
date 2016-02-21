@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160212221858) do
+ActiveRecord::Schema.define(version: 20160221200645) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -26,8 +26,29 @@ ActiveRecord::Schema.define(version: 20160212221858) do
     t.integer  "weight"
     t.string   "address"
     t.string   "home_phone"
-    t.datetime "created_at",     null: false
-    t.datetime "updated_at",     null: false
+    t.datetime "created_at",                              null: false
+    t.datetime "updated_at",                              null: false
+    t.string   "work_phone"
+    t.string   "physician"
+    t.string   "referred_by"
+    t.string   "emergency_contact_name"
+    t.string   "emergency_contact_phone"
+    t.string   "exercise_frequency"
+    t.string   "exercise_type"
+    t.text     "breakfast"
+    t.text     "lunch"
+    t.text     "dinner"
+    t.text     "snack"
+    t.string   "caffeine_type"
+    t.integer  "caffeine_cups"
+    t.boolean  "alcohol",                 default: false, null: false
+    t.string   "alcohol_type"
+    t.integer  "drinks_per_week"
+    t.boolean  "alcohol_problem",         default: false, null: false
+    t.boolean  "smoker",                  default: false, null: false
+    t.string   "smoking_substance"
+    t.integer  "years_smoker"
+    t.date     "year_quit"
   end
 
 end
