@@ -1,0 +1,21 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  symptom: MyString
+  date_started: 2016-02-21
+  alleviated_by: MyText
+  aggravated_by: MyText
+  diagnosis: MyText
+  inhibited_activity: MyText
+  treatment: MyText
+  client_id: 
+
+two:
+  symptom: MyString
+  date_started: 2016-02-21
+  alleviated_by: MyText
+  aggravated_by: MyText
+  diagnosis: MyText
+  inhibited_activity: MyText
+  treatment: MyText
+  client_id: 

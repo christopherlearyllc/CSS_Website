@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160221200645) do
+ActiveRecord::Schema.define(version: 20160222020416) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -51,4 +51,20 @@ ActiveRecord::Schema.define(version: 20160221200645) do
     t.date     "year_quit"
   end
 
+  create_table "complaints", force: :cascade do |t|
+    t.string   "symptom"
+    t.date     "date_started"
+    t.text     "alleviated_by"
+    t.text     "aggravated_by"
+    t.text     "diagnosis"
+    t.text     "inhibited_activity"
+    t.text     "treatment"
+    t.integer  "client_id"
+    t.datetime "created_at",         null: false
+    t.datetime "updated_at",         null: false
+  end
+
+  add_index "complaints", ["client_id"], name: "index_complaints_on_client_id", using: :btree
+
+  add_foreign_key "complaints", "clients"
 end
