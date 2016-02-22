@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  hospitalization_reason: MyText
+  year: 2016-02-22
+  client_id: 
+
+two:
+  hospitalization_reason: MyText
+  year: 2016-02-22
+  client_id: 

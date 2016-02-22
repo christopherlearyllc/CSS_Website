@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  surgical_procedure: MyString
+  year: 2016-02-22
+  client_id: 
+
+two:
+  surgical_procedure: MyString
+  year: 2016-02-22
+  client_id: 

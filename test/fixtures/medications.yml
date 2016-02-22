@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  strength: MyString
+  frequency: MyString
+  client_id: 
+
+two:
+  name: MyString
+  strength: MyString
+  frequency: MyString
+  client_id: 

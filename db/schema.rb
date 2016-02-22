@@ -11,10 +11,20 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160222020416) do
+ActiveRecord::Schema.define(version: 20160222200536) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "allergies", force: :cascade do |t|
+    t.string   "type"
+    t.text     "reaction"
+    t.integer  "client_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_index "allergies", ["client_id"], name: "index_allergies_on_client_id", using: :btree
 
   create_table "clients", force: :cascade do |t|
     t.string   "first_name"
@@ -66,5 +76,82 @@ ActiveRecord::Schema.define(version: 20160222020416) do
 
   add_index "complaints", ["client_id"], name: "index_complaints_on_client_id", using: :btree
 
+  create_table "family_disease_histories", force: :cascade do |t|
+    t.text     "heart_disease"
+    t.text     "cancer"
+    t.text     "diabetes"
+    t.text     "hypertension"
+    t.text     "thyroid_disorder"
+    t.text     "hepatitis"
+    t.text     "asthma_allergies"
+    t.text     "seizures"
+    t.text     "stroke"
+    t.text     "neurological_disorders"
+    t.text     "substance_abuse"
+    t.text     "other"
+    t.integer  "client_id"
+    t.datetime "created_at",             null: false
+    t.datetime "updated_at",             null: false
+  end
+
+  add_index "family_disease_histories", ["client_id"], name: "index_family_disease_histories_on_client_id", using: :btree
+
+  create_table "hospitalizations", force: :cascade do |t|
+    t.text     "hospitalization_reason"
+    t.date     "year"
+    t.integer  "client_id"
+    t.datetime "created_at",             null: false
+    t.datetime "updated_at",             null: false
+  end
+
+  add_index "hospitalizations", ["client_id"], name: "index_hospitalizations_on_client_id", using: :btree
+
+  create_table "medications", force: :cascade do |t|
+    t.string   "name"
+    t.string   "strength"
+    t.string   "frequency"
+    t.integer  "client_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_index "medications", ["client_id"], name: "index_medications_on_client_id", using: :btree
+
+  create_table "personal_disease_histories", force: :cascade do |t|
+    t.text     "heart_disease"
+    t.text     "cancer"
+    t.text     "diabetes"
+    t.text     "hypertension"
+    t.text     "thyroid_disorder"
+    t.text     "hepatitis"
+    t.text     "asthma_allergies"
+    t.text     "seizures"
+    t.text     "stroke"
+    t.text     "neurological_disorders"
+    t.text     "substance_abuse"
+    t.text     "other"
+    t.integer  "client_id"
+    t.datetime "created_at",             null: false
+    t.datetime "updated_at",             null: false
+  end
+
+  add_index "personal_disease_histories", ["client_id"], name: "index_personal_disease_histories_on_client_id", using: :btree
+
+  create_table "surgeries", force: :cascade do |t|
+    t.string   "surgical_procedure"
+    t.date     "year"
+    t.integer  "client_id"
+    t.datetime "created_at",         null: false
+    t.datetime "updated_at",         null: false
+  end
+
+  add_index "surgeries", ["client_id"], name: "index_surgeries_on_client_id", using: :btree
+
+  add_foreign_key "allergies", "clients"
   add_foreign_key "complaints", "clients"
+  add_foreign_key "family_disease_histories", "clients"
+  add_foreign_key "hospitalizations", "clients"
+  add_foreign_key "medications", "clients"
+  add_foreign_key "personal_disease_histories", "clients"
+  add_foreign_key "surgeries", "clients"
 end

@@ -1,0 +1,31 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  heart_disease: MyText
+  cancer: MyText
+  diabetes: MyText
+  hypertension: MyText
+  thyroid_disorder: MyText
+  hepatitis: MyText
+  asthma_allergies: MyText
+  seizures: MyText
+  stroke: MyText
+  neurological_disorders: MyText
+  substance_abuse: MyText
+  other: MyText
+  client_id: 
+
+two:
+  heart_disease: MyText
+  cancer: MyText
+  diabetes: MyText
+  hypertension: MyText
+  thyroid_disorder: MyText
+  hepatitis: MyText
+  asthma_allergies: MyText
+  seizures: MyText
+  stroke: MyText
+  neurological_disorders: MyText
+  substance_abuse: MyText
+  other: MyText
+  client_id: 
