@@ -39,6 +39,6 @@ class ClientsController < ApplicationController
   private
   
     def client_params
-      params.require(:client).permit(:first_name, :last_name, :middle_initial, :gender, :date_of_birth, :height, :weight, :address, :home_phone)
+      params.require(:client).permit(:first_name, :last_name, :middle_initial, :gender, :date_of_birth, :height, :weight, :address, :home_phone, :work_phone, :physician, :referred_by, :emergency_contact_name, :emergency_contact_phone, :exercise_frequency, :exercise_type, :breakfast, :lunch, :dinner, :snack, :caffeine_type, :caffeine_cups, :alcohol_consumption, :alcohol_type, :alcohol_abuse, :drinks_per_week, :smoking_habit, :smoking_substance, :years_smoker, :year_quit)
     end
 end
