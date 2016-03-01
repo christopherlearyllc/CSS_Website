@@ -2,3 +2,30 @@
 @import "bootswatch/lumen/variables";
 @import "bootstrap";
 @import "bootswatch/lumen/bootswatch";
+
+@media (min-width: 768px) {
+
+  .panel-body {
+    padding: 15px 30px;
+  }
+  
+  .form-inline .form-group input {
+    margin-right: 10px;
+  }
+
+  .form-blocks {
+    margin-bottom: 40px;
+  }
+
+  #client_first_name {
+    width: 300px;
+  }
+
+  #client_middle_initial {
+    width: 102px;
+  }
+
+  #client_last_name {
+    width: 300px;
+  }
+}

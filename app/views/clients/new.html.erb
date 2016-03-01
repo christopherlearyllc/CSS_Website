@@ -16,139 +16,148 @@
 
   <div class="panel panel-success">
     <div class="panel-heading">
-      <h3 class="panel-title">Personal Info</h3>
+      <h3 class="panel-title">Health History Form</h3>
     </div>
     <div class="panel-body">
-      <div class="form-group">
-        <%= f.label :first_name, class: "sr-only" %>
-        <%= f.text_field :first_name, class: "form-control", placeholder: "First Name"  %>
+      <div class="form-blocks"><legend>Name</legend>
+        <div class="form-group">
+          <%= f.label :first_name, class: "sr-only" %>
+          <%= f.text_field :first_name, class: "form-control", placeholder: "First Name"  %>
+        </div>
+        <div class="form-group">
+          <%= f.label :middle_initial, class: "sr-only" %>
+          <%= f.text_field :middle_initial, class: "form-control", placeholder: "Middle Initial" %>
+        </div>
+        <div class="form-group">
+          <%= f.label :last_name, class: "sr-only" %>
+          <%= f.text_field :last_name, class: "form-control", placeholder: "Last Name"  %>
+        </div>
       </div>
-      <div class="form-group">
-        <%= f.label :middle_initial, class: "sr-only" %>
-        <%= f.text_field :middle_initial, class: "form-control", placeholder: "Middle Initial" %>
+      <div class="form-blocks"><legend>Personal Info</legend>
+        <div class="form-group">
+          <%= f.label :gender %>
+          <%= f.select(:gender, options_for_select([['Male'], ['Female']]), {}, { class: 'form-control' })%>
+        </div>
+        <div class="form-group">
+          <%= f.label :date_of_birth, class: "sr-only"  %>
+          <%= f.text_field :date_of_birth, class: "form-control", placeholder: "Date of Birth" %>
+        </div>
+        <div class="form-group">
+          <%= f.label :height, class: "sr-only"  %>
+          <%= f.text_field :height, class: "form-control", placeholder: "Height" %>
+        </div>
+        <div class="form-group">
+          <%= f.label :weight, class: "sr-only"  %>
+          <%= f.text_field :weight, class: "form-control", placeholder: "Weight" %>
+        </div>
       </div>
-      <div class="form-group">
-        <%= f.label :last_name, class: "sr-only" %>
-        <%= f.text_field :last_name, class: "form-control", placeholder: "Last Name"  %>
+      <div class="form-blocks"><legend>Contact</legend>
+       	<div class="form-group">
+          <%= f.label :address, class: "sr-only"  %>
+          <%= f.text_field :address, class: "form-control", placeholder: "Address" %>
+        </div>
+        <div class="form-group">
+          <%= f.label :home_phone, class: "sr-only"  %>
+          <%= f.text_field :home_phone, class: "form-control", placeholder: "Home Phone" %>
+        </div>
+        <div class="form-group">
+          <%= f.label :work_phone, class: "sr-only"  %>
+          <%= f.text_field :work_phone, class: "form-control", placeholder: "Work Phone" %>
+        </div>
+        <div class="form-group">
+          <%= f.label :physician, class: "sr-only"  %>
+          <%= f.text_field :physician, class: "form-control", placeholder: "Physician" %>
+        </div>
+        <div class="form-group">
+          <%= f.label :referred_by, class: "sr-only"  %>
+          <%= f.text_field :referred_by, class: "form-control", placeholder: "Referred By" %>
+        </div>
+        <div class="form-group">
+          <%= f.label :emergency_contact_name, class: "sr-only"  %>
+          <%= f.text_field :emergency_contact_name, class: "form-control", placeholder: "Emergency Contact Name" %>
+        </div>
+         <div class="form-group">
+          <%= f.label :emergency_contact_phone, class: "sr-only"  %>
+          <%= f.text_field :emergency_contact_phone, class: "form-control", placeholder: "Emergency Contact Phone" %>
+        </div>
       </div>
-      <div class="form-group">
-        <%= f.label :gender %>
-        <%= f.select(:gender, options_for_select([['Male'], ['Female']]), {}, { class: 'form-control' })%>
+      <div class="form-blocks"><legend>Lifestyle</legend>
+        <div class="form-group">
+          <%= f.label :exercise_frequency, class: "sr-only" %>
+          <%= f.text_field :exercise_frequency, class: "form-control", placeholder: "Exercise Frequency"  %>
+        </div>
+        <div class="form-group">
+          <%= f.label :exercise_type, class: "sr-only" %>
+          <%= f.text_field :exercise_type, class: "form-control", placeholder: "Exercise Type"  %>
+        </div>
       </div>
-      <div class="form-group">
-        <%= f.label :date_of_birth, class: "sr-only"  %>
-        <%= f.text_field :date_of_birth, class: "form-control", placeholder: "Date of Birth" %>
+      <div class="form-blocks"><legend>Diet</legend>
+        <div class="form-group">
+          <%= f.label :breakfast, class: "sr-only" %>
+          <%= f.text_field :breakfast, class: "form-control", placeholder: "Breakfast" %>
+        </div>
+        <div class="form-group">
+          <%= f.label :lunch, class: "sr-only"  %>
+          <%= f.text_field :lunch, class: "form-control", placeholder: "Lunch" %>
+        </div>
+        <div class="form-group">
+          <%= f.label :dinner, class: "sr-only"  %>
+          <%= f.text_field :dinner, class: "form-control", placeholder: "Dinner" %>
+        </div>
+        <div class="form-group">
+          <%= f.label :snack, class: "sr-only"  %>
+          <%= f.text_field :snack, class: "form-control", placeholder: "Snacks" %>
+        </div>
       </div>
-      <div class="form-group">
-        <%= f.label :height, class: "sr-only"  %>
-        <%= f.text_field :height, class: "form-control", placeholder: "Height" %>
+      <div class="form-blocks"><legend>Caffeine</legend>
+        <div class="form-group">
+          <%= f.label :caffeine_type, class: "sr-only"  %>
+          <%= f.text_field :caffeine_type, class: "form-control", placeholder: "What kind of caffeine do you drink?" %>
+        </div>
+        <div class="form-group">
+          <%= f.label :caffeine_cups, class: "sr-only"  %>
+          <%= f.text_field :caffeine_cups, class: "form-control", placeholder: "Cups per Day" %>
+        </div>
       </div>
-      <div class="form-group">
-        <%= f.label :weight, class: "sr-only"  %>
-        <%= f.text_field :weight, class: "form-control", placeholder: "Weight" %>
+      <div class="form-blocks"><legend>Alcohol</legend>
+        <div class="form-group">
+          <%= f.label(:alcohol_consumption, "Do you drink?")%>
+          <%= f.select(:alcohol_consumption, options_for_select([['Yes'], ['No']]), {}, { class: 'form-control' })%>
+        </div>
+        <div class="form-group">
+          <%= f.label :alcohol_type, class: "sr-only"  %>
+          <%= f.text_field :alcohol_type, class: "form-control", placeholder: "Type of Alcohol" %>
+        </div>
+        <div class="form-group">
+          <%= f.label :drinks_per_week %>
+          <%= f.select(:drinks_per_week, options_for_select([['None'], ['1-3'], ['4-6'], ['7-9'], ['10+']]), {}, { class: 'form-control' })%>
+        </div>
+        <div class="form-group">
+          <%= f.label(:alcohol_abuse, "Is your drinking a conern?")%>
+          <%= f.select(:alcohol_abuse, options_for_select([['Yes'], ['No']]), {}, { class: 'form-control' })%>
+        </div>
       </div>
-     	<div class="form-group">
-        <%= f.label :address, class: "sr-only"  %>
-        <%= f.text_field :address, class: "form-control", placeholder: "Address" %>
-      </div>
-      <div class="form-group">
-        <%= f.label :home_phone, class: "sr-only"  %>
-        <%= f.text_field :home_phone, class: "form-control", placeholder: "Home Phone" %>
-      </div>
-      <div class="form-group">
-        <%= f.label :work_phone, class: "sr-only"  %>
-        <%= f.text_field :work_phone, class: "form-control", placeholder: "Work Phone" %>
-      </div>
-      <div class="form-group">
-        <%= f.label :physician, class: "sr-only"  %>
-        <%= f.text_field :physician, class: "form-control", placeholder: "Physician" %>
-      </div>
-      <div class="form-group">
-        <%= f.label :referred_by, class: "sr-only"  %>
-        <%= f.text_field :referred_by, class: "form-control", placeholder: "Referred By" %>
-      </div>
-      <div class="form-group">
-        <%= f.label :emergency_contact_name, class: "sr-only"  %>
-        <%= f.text_field :emergency_contact_name, class: "form-control", placeholder: "Emergency Contact Name" %>
-      </div>
-       <div class="form-group">
-        <%= f.label :emergency_contact_phone, class: "sr-only"  %>
-        <%= f.text_field :emergency_contact_phone, class: "form-control", placeholder: "Emergency Contact Phone" %>
+      <div class="form-blocks"><legend>Smoking</legend>
+        <div class="form-group">
+          <%= f.label(:smoking_habit, "Do you smoke?")%>
+          <%= f.select(:smoking_habit, options_for_select([['Yes'], ['No']]), {}, { class: 'form-control' })%>
+        </div>
+         <div class="form-group">
+          <%= f.label :smoking_substance, class: "sr-only"  %>
+          <%= f.text_field :smoking_substance, class: "form-control", placeholder: "Smoking Substance" %>
+        </div>
+         <div class="form-group">
+          <%= f.label :years_smoker, class: "sr-only"  %>
+          <%= f.text_field :years_smoker, class: "form-control", placeholder: "How many years have you smoked?" %>
+        </div>
+         <div class="form-group">
+          <%= f.label :year_quit, class: "sr-only"  %>
+          <%= f.text_field :year_quit, class: "form-control", placeholder: "What year did you quit smoking?" %>
+        </div>
       </div>
     </div>
   </div>
-  <div class="panel panel-primary">
-    <div class="panel-heading">
-      <h3 class="panel-title">Lifestyle</h3>
-    </div>
-    <div class="panel-body">
-      <div class="form-group">
-        <%= f.label :exercise_frequency, class: "sr-only" %>
-        <%= f.text_field :exercise_frequency, class: "form-control", placeholder: "Exercise Frequency"  %>
-      </div>
-      <div class="form-group">
-        <%= f.label :exercise_type, class: "sr-only" %>
-        <%= f.text_field :exercise_type, class: "form-control", placeholder: "Exercise Type"  %>
-      </div>
-      <div class="form-group">
-        <%= f.label :breakfast, class: "sr-only" %>
-        <%= f.text_field :breakfast, class: "form-control", placeholder: "Breakfast" %>
-      </div>
-      <div class="form-group">
-        <%= f.label :lunch, class: "sr-only"  %>
-        <%= f.text_field :lunch, class: "form-control", placeholder: "Lunch" %>
-      </div>
-      <div class="form-group">
-        <%= f.label :dinner, class: "sr-only"  %>
-        <%= f.text_field :dinner, class: "form-control", placeholder: "Dinner" %>
-      </div>
-      <div class="form-group">
-        <%= f.label :snack, class: "sr-only"  %>
-        <%= f.text_field :snack, class: "form-control", placeholder: "Snacks" %>
-      </div>
-      <div class="form-group">
-        <%= f.label :caffeine_type, class: "sr-only"  %>
-        <%= f.text_field :caffeine_type, class: "form-control", placeholder: "What kind of caffeine do you drink?" %>
-      </div>
-      <div class="form-group">
-        <%= f.label :caffeine_cups, class: "sr-only"  %>
-        <%= f.text_field :caffeine_cups, class: "form-control", placeholder: "Cups per Day" %>
-      </div>
-      <div class="form-group">
-        <%= f.label(:alcohol_consumption, "Do you drink?")%>
-        <%= f.select(:alcohol_consumption, options_for_select([['Yes'], ['No']]), {}, { class: 'form-control' })%>
-      </div>
-      <div class="form-group">
-        <%= f.label :alcohol_type, class: "sr-only"  %>
-        <%= f.text_field :alcohol_type, class: "form-control", placeholder: "Type of Alcohol" %>
-      </div>
-      <div class="form-group">
-        <%= f.label :drinks_per_week %>
-        <%= f.select(:drinks_per_week, options_for_select([['None'], ['1-3'], ['4-6'], ['7-9'], ['10+']]), {}, { class: 'form-control' })%>
-      </div>
-      <div class="form-group">
-        <%= f.label(:alcohol_abuse, "Is your drinking a conern?")%>
-        <%= f.select(:alcohol_abuse, options_for_select([['Yes'], ['No']]), {}, { class: 'form-control' })%>
-      </div>
-      <div class="form-group">
-        <%= f.label(:smoking_habit, "Do you smoke?")%>
-        <%= f.select(:smoking_habit, options_for_select([['Yes'], ['No']]), {}, { class: 'form-control' })%>
-      </div>
-       <div class="form-group">
-        <%= f.label :smoking_substance, class: "sr-only"  %>
-        <%= f.text_field :smoking_substance, class: "form-control", placeholder: "Smoking Substance" %>
-      </div>
-       <div class="form-group">
-        <%= f.label :years_smoker, class: "sr-only"  %>
-        <%= f.text_field :years_smoker, class: "form-control", placeholder: "How many years have you smoked?" %>
-      </div>
-       <div class="form-group">
-        <%= f.label :year_quit, class: "sr-only"  %>
-        <%= f.text_field :year_quit, class: "form-control", placeholder: "What year did you quit smoking?" %>
-      </div>
-    </div>
-  </div>
-  <div>
+<div>
     <%= f.submit class: "btn btn-primary"%>
   </div>
 <% end %>
