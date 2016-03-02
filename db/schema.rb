@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160225150141) do
+ActiveRecord::Schema.define(version: 20160302140557) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -49,7 +49,6 @@ ActiveRecord::Schema.define(version: 20160225150141) do
     t.text     "lunch"
     t.text     "dinner"
     t.text     "snack"
-    t.string   "caffeine_type"
     t.integer  "caffeine_cups"
     t.string   "alcohol_type"
     t.integer  "drinks_per_week"
@@ -59,6 +58,13 @@ ActiveRecord::Schema.define(version: 20160225150141) do
     t.string   "alcohol_consumption"
     t.string   "alcohol_abuse"
     t.string   "smoking_habit"
+    t.string   "city"
+    t.string   "state"
+    t.string   "zip"
+    t.string   "drink_coffee"
+    t.string   "drink_tea"
+    t.string   "drink_cola"
+    t.string   "drink_other_caffeine"
   end
 
   create_table "complaints", force: :cascade do |t|

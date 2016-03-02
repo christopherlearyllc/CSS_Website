@@ -13,19 +13,44 @@
     margin-right: 10px;
   }
 
+  .stacked-inputs {
+    margin: 10px 0;
+  }
+
   .form-blocks {
     margin-bottom: 40px;
   }
 
-  #client_first_name {
-    width: 300px;
+  select {
+    margin-right: 10px;
   }
 
   #client_middle_initial {
     width: 102px;
   }
 
-  #client_last_name {
+  #client_address {
+    width: 250px;
+  }
+
+  #client_date_of_birth {
+    width: 160px;
+  }
+
+  #client_physician, #client_referred_by {
+    width: 200px;
+  } 
+
+  #client_emergency_contact_name, #client_emergency_contact_phone {
+    width: 260px;
+  }
+
+  #client_first_name, #client_last_name, #client_exercise_frequency, #client_exercise_type, #client_breakfast, #client_lunch, #client_dinner, #client_snack {
     width: 300px;
   }
+
+  #client_smoking_habit, #client_smoking_substance, #client_years_smoker, #client_year_quit {
+    width: 235px;
+  }
+
 }
