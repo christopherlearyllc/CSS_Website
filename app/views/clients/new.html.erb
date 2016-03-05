@@ -1,4 +1,4 @@
-<%= form_for :client, url: clients_path, html: { class: "form-inline" } do |f| %>
+<%= form_for (@client), html: { class: "form-inline" } do |f| %>
    
   <% if @client.errors.any? %>
   <div id="error_explanation">
@@ -35,10 +35,6 @@
       </div>
       <div class="form-blocks"><legend>Personal Info</legend>
         <div class="form-group">
-          <%= f.label :date_of_birth, class: "sr-only"  %>
-          <%= f.text_field :date_of_birth, class: "form-control", placeholder: "Birthdate yyyy-mm-dd" %>
-        </div>
-        <div class="form-group">
           <%= f.label :height, class: "sr-only"  %>
           <%= f.text_field :height, class: "form-control", placeholder: "Height" %>
         </div>
@@ -48,6 +44,13 @@
         </div>
         <div class="form-group">
           <%= f.select(:gender, options_for_select([['Male'], ['Female']]), {:prompt => "Select Gender"}, { class: 'form-control' })%>
+        </div>
+        <div class="stacked-inputs">
+          <div class="form-group"><h5>Date of Birth</h5>
+            <%= f.label :date_of_birth, class: "sr-only"   %>
+            <%= f.date_select :date_of_birth, :order => [:year, :month, :day], :start_year => 1940,  
+  :end_year => 2013, :prompt => { :day => 'Day', :month => 'Month', :year => 'Year' }, :with_css_classes => true, :html=>{:class => "form-control"} %>
+          </div>
         </div>
       </div>
       <div class="form-blocks"><legend>Contact</legend>
@@ -79,11 +82,11 @@
             <%= f.label :physician, class: "sr-only"  %>
             <%= f.text_field :physician, class: "form-control", placeholder: "Physician" %>
           </div>
-          <div class="form-group">
-            <%= f.label :referred_by, class: "sr-only"  %>
-            <%= f.text_field :referred_by, class: "form-control", placeholder: "Referred By" %>
-          </div>
           <div class="stacked-inputs">
+            <div class="form-group">
+              <%= f.label :referred_by, class: "sr-only"  %>
+              <%= f.text_field :referred_by, class: "form-control", placeholder: "Referred By" %>
+            </div>
             <div class="form-group">
               <%= f.label :emergency_contact_name, class: "sr-only"  %>
               <%= f.text_field :emergency_contact_name, class: "form-control", placeholder: "Emergency Contact Name" %>
@@ -94,6 +97,39 @@
             </div>
           </div>
         </div>
+      </div>
+      <div class="form-blocks"><legend>Complaints</legend>
+        <%= f.fields_for :complaints do |builder| %>
+        <div class="form-group">
+          <%= builder.label :symptom, class: "sr-only" %>
+          <%= builder.text_field :symptom, class: "form-control", placeholder: "Symptom"  %>
+        </div>
+        <div class="form-group">
+          <%= builder.label :date_started, class: "sr-only" %>
+          <%= builder.date_select :date_started, :order => [:year, :month, :day], :start_year => 1940,  
+  :end_year => 2013, :prompt => { :day => 'Day', :month => 'Month', :year => 'Year' }, :with_css_classes => true, :html=>{:class => "form-control"} %>
+        </div>
+        <div class="form-group">
+            <%= builder.label :alleviated_by, class: "sr-only" %>
+            <%= builder.text_field :alleviated_by, class: "form-control", placeholder: "Alleviated By"  %>
+        </div>
+        <div class="form-group">
+            <%= builder.label :aggravated_by, class: "sr-only" %>
+            <%= builder.text_field :aggravated_by, class: "form-control", placeholder: "Aggravated By"  %>
+        </div>
+        <div class="form-group">
+            <%= builder.label :diagnosis, class: "sr-only" %>
+            <%= builder.text_field :diagnosis, class: "form-control", placeholder: "Diagnosis"  %>
+        </div>
+        <div class="form-group">
+            <%= builder.label :inhibited_activity, class: "sr-only" %>
+            <%= builder.text_field :inhibited_activity, class: "form-control", placeholder: "Inhibited Activity"  %>
+        </div>
+        <div class="form-group">
+            <%= builder.label :treatment, class: "sr-only" %>
+            <%= builder.text_field :treatment, class: "form-control", placeholder: "Treatment"  %>
+        </div>
+          <% end %>
       </div>
       <div class="form-blocks"><legend>Lifestyle</legend>
         <div class="form-group">

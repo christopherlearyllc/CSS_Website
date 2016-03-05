@@ -7,7 +7,7 @@ class Client < ActiveRecord::Base
   has_many :medications
   has_many :allergies
   
-  validates :first_name, :last_name, :height, :weight, :address, :home_phone, presence: true
+  # validates :first_name, :last_name, :height, :weight, :address, :home_phone, :alcohol_consumption, :smoking_habit, presence: true
   validates :middle_initial, length: { maximum: 1 }
 
   accepts_nested_attributes_for :complaints

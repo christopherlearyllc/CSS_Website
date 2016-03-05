@@ -30,7 +30,15 @@
   }
 
   #client_address {
-    width: 250px;
+    width: 225px;
+  }
+
+  #client_city, #client_zip {
+    width: 129px;
+  }
+
+  #client_state {
+    width: 105px;
   }
 
   #client_date_of_birth {
@@ -42,7 +50,7 @@
   } 
 
   #client_emergency_contact_name, #client_emergency_contact_phone {
-    width: 260px;
+    width: 200px;
   }
 
   #client_first_name, #client_last_name, #client_exercise_frequency, #client_exercise_type, #client_breakfast, #client_lunch, #client_dinner, #client_snack {
@@ -52,5 +60,29 @@
   #client_smoking_habit, #client_smoking_substance, #client_years_smoker, #client_year_quit {
     width: 235px;
   }
+}
 
+
+/****** Global Styles ******/
+.year, .month, .day {
+  display: inline-block;
+  vertical-align: middle;
+  height: 38px;
+  padding: 7px 12px;
+  font-size: 14px;
+  line-height: 1.42857143;
+  color: #555555;
+  background-color: #fff;
+  background-image: none;
+  border: 1px solid #e7e7e7;
+  border-radius: 4px;
+  -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+  -webkit-transition: border-color ease-in-out 0.15s, box-shadow ease-in-out 0.15s;
+  -o-transition: border-color ease-in-out 0.15s, box-shadow ease-in-out 0.15s;
+  transition: border-color ease-in-out 0.15s, box-shadow ease-in-out 0.15s;
+}
+
+.month  {
+  width: 99px;
 }
