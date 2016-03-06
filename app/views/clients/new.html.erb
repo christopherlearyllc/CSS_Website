@@ -36,11 +36,11 @@
       <div class="form-blocks"><legend>Personal Info</legend>
         <div class="form-group">
           <%= f.label :height, class: "sr-only"  %>
-          <%= f.text_field :height, class: "form-control", placeholder: "Height" %>
+          <%= f.text_field :height, class: "form-control", placeholder: "Height in Inches" %>
         </div>
         <div class="form-group">
           <%= f.label :weight, class: "sr-only"  %>
-          <%= f.text_field :weight, class: "form-control", placeholder: "Weight" %>
+          <%= f.text_field :weight, class: "form-control", placeholder: "Weight in lbs." %>
         </div>
         <div class="form-group">
           <%= f.select(:gender, options_for_select([['Male'], ['Female']]), {:prompt => "Select Gender"}, { class: 'form-control' })%>
@@ -80,7 +80,7 @@
           </div>
           <div class="form-group">
             <%= f.label :physician, class: "sr-only"  %>
-            <%= f.text_field :physician, class: "form-control", placeholder: "Physician" %>
+            <%= f.text_field :physician, class: "form-control", placeholder: "Family Physician" %>
           </div>
           <div class="stacked-inputs">
             <div class="form-group">
@@ -105,31 +105,35 @@
           <%= builder.text_field :symptom, class: "form-control", placeholder: "Symptom"  %>
         </div>
         <div class="form-group">
-          <%= builder.label :date_started, class: "sr-only" %>
-          <%= builder.date_select :date_started, :order => [:year, :month, :day], :start_year => 1940,  
-  :end_year => 2013, :prompt => { :day => 'Day', :month => 'Month', :year => 'Year' }, :with_css_classes => true, :html=>{:class => "form-control"} %>
+          <%= builder.label :date_started, "Date originally noted:", class: "label-margin" %>
+          <%= builder.date_select :date_started, :order => [:year, :month, :day], :start_year => 1950,  
+  :end_year => Date.current.year, :prompt => { :day => 'Day', :month => 'Month', :year => 'Year' }, :with_css_classes => true, :html=>{:class => "form-control"} %>
         </div>
-        <div class="form-group">
-            <%= builder.label :alleviated_by, class: "sr-only" %>
-            <%= builder.text_field :alleviated_by, class: "form-control", placeholder: "Alleviated By"  %>
-        </div>
-        <div class="form-group">
-            <%= builder.label :aggravated_by, class: "sr-only" %>
-            <%= builder.text_field :aggravated_by, class: "form-control", placeholder: "Aggravated By"  %>
-        </div>
-        <div class="form-group">
+        <div class="stacked-inputs">
+          <div class="form-group">
+              <%= builder.label :alleviated_by, class: "sr-only" %>
+              <%= builder.text_field :alleviated_by, class: "form-control", placeholder: "What makes it better?"  %>
+          </div>
+          <div class="form-group">
+              <%= builder.label :aggravated_by, class: "sr-only" %>
+              <%= builder.text_field :aggravated_by, class: "form-control", placeholder: "What makes it worse?"  %>
+          </div>
+          <div class="form-group">
             <%= builder.label :diagnosis, class: "sr-only" %>
-            <%= builder.text_field :diagnosis, class: "form-control", placeholder: "Diagnosis"  %>
-        </div>
-        <div class="form-group">
+            <%= builder.text_field :diagnosis, class: "form-control", placeholder: "Was it diagnosed? If yes, what was it?"  %>
+          </div>
+          </div>
+          <div class="stacked-inputs">
+          <div class="form-group">
             <%= builder.label :inhibited_activity, class: "sr-only" %>
-            <%= builder.text_field :inhibited_activity, class: "form-control", placeholder: "Inhibited Activity"  %>
-        </div>
-        <div class="form-group">
+            <%= builder.text_field :inhibited_activity, class: "form-control", placeholder: "Which daily activities does it inhibit?"  %>
+          </div>
+          <div class="form-group">
             <%= builder.label :treatment, class: "sr-only" %>
-            <%= builder.text_field :treatment, class: "form-control", placeholder: "Treatment"  %>
+            <%= builder.text_field :treatment, class: "form-control", placeholder: "What treatments have you tried?"  %>
+          </div>
         </div>
-          <% end %>
+        <% end %>
       </div>
       <div class="form-blocks"><legend>Lifestyle</legend>
         <div class="form-group">
@@ -176,7 +180,7 @@
         </div>
         <div class="form-group">
           <%= f.label :caffeine_cups, class: "sr-only"  %>
-          <%= f.text_field :caffeine_cups, class: "form-control", placeholder: "Cups per Day" %>
+          <%= f.select(:caffeine_cups, options_for_select(0...11), {:prompt => "Cups per Day" }, { class: 'form-control' }) %>
         </div>
       </div>
       <div class="form-blocks"><legend>Alcohol</legend>
@@ -185,10 +189,10 @@
         </div>
         <div class="form-group">
           <%= f.label :alcohol_type, class: "sr-only"  %>
-          <%= f.text_field :alcohol_type, class: "form-control", placeholder: "Type of Alcohol" %>
+          <%= f.text_field :alcohol_type, class: "form-control", placeholder: "Type(s) of Alcohol" %>
         </div>
         <div class="form-group">
-          <%= f.select(:drinks_per_week, options_for_select([['None'], ['1-3'], ['4-6'], ['7-9'], ['10+']]), {:prompt => "Drinks per Week"}, { class: 'form-control' })%>
+          <%= f.select(:drinks_per_week, options_for_select(0...36), {:prompt => "Drinks per Week"}, { class: 'form-control' })%>
         </div>
         <div class="form-group">
           <%= f.select(:alcohol_abuse, options_for_select([['Yes'], ['No']]), {:prompt => "Is your drinking a concern?"}, { class: 'form-control' })%>
@@ -209,7 +213,7 @@
           </div>
           <div class="form-group">
             <%= f.label :year_quit, class: "sr-only"  %>
-            <%= f.text_field :year_quit, class: "form-control", placeholder: "What year did you quit?" %>
+            <%= f.select(:year_quit, options_for_select(1950...Date.current.year), {:prompt => "What year did you quit?"}, { class: 'form-control' }) %>
           </div>
         </div>
       </div>

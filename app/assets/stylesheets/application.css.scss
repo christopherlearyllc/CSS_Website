@@ -45,9 +45,14 @@
     width: 160px;
   }
 
-  #client_physician, #client_referred_by {
+  #client_physician {
+    width: 293px;
+  }
+  
+  #client_referred_by {
     width: 200px;
   } 
+
 
   #client_emergency_contact_name, #client_emergency_contact_phone {
     width: 200px;
@@ -59,6 +64,25 @@
 
   #client_smoking_habit, #client_smoking_substance, #client_years_smoker, #client_year_quit {
     width: 235px;
+  }
+
+  #client_complaints_attributes_0_symptom {
+    width: 240px;
+  }
+
+  #client_complaints_attributes_0_diagnosis {
+    width: 243px;
+  }
+  
+  #client_complaints_attributes_0_alleviated_by, #client_complaints_attributes_0_aggravated_by {
+    width: 182px;
+  }
+
+  #client_complaints_attributes_0_inhibited_activity, #client_complaints_attributes_0_treatment {
+    width: 310px;
+  }
+  .label-margin {
+    margin-right: 10px;
   }
 }
 

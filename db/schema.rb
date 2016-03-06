@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160302140557) do
+ActiveRecord::Schema.define(version: 20160306011105) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -54,7 +54,7 @@ ActiveRecord::Schema.define(version: 20160302140557) do
     t.integer  "drinks_per_week"
     t.string   "smoking_substance"
     t.integer  "years_smoker"
-    t.date     "year_quit"
+    t.string   "year_quit"
     t.string   "alcohol_consumption"
     t.string   "alcohol_abuse"
     t.string   "smoking_habit"
