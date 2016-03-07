@@ -10,5 +10,5 @@ class Client < ActiveRecord::Base
   # validates :first_name, :last_name, :height, :weight, :address, :home_phone, :alcohol_consumption, :smoking_habit, presence: true
   validates :middle_initial, length: { maximum: 1 }
 
-  accepts_nested_attributes_for :complaints
+  accepts_nested_attributes_for :complaints, reject_if: :all_blank, allow_destroy: true
 end

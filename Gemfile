@@ -19,6 +19,9 @@ gem 'coffee-rails', '~> 4.1.0'
 # See https://github.com/rails/execjs#readme for more supported runtimes
 # gem 'therubyracer', platforms: :ruby
 
+# Cocoon gem for dynamic nested forms
+gem "cocoon", '~> 1.2.8'
+
 gem 'puma'
 # Use jquery as the JavaScript library
 gem 'jquery-rails'

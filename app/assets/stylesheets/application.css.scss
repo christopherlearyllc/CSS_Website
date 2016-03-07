@@ -48,17 +48,20 @@
   #client_physician {
     width: 293px;
   }
-  
+
   #client_referred_by {
     width: 200px;
   } 
 
+  #client_first_name, #client_last_name {
+    width: 250px;
+  }
 
   #client_emergency_contact_name, #client_emergency_contact_phone {
     width: 200px;
   }
 
-  #client_first_name, #client_last_name, #client_exercise_frequency, #client_exercise_type, #client_breakfast, #client_lunch, #client_dinner, #client_snack {
+  #client_exercise_frequency, #client_exercise_type, #client_breakfast, #client_lunch, #client_dinner, #client_snack {
     width: 300px;
   }
 
@@ -66,23 +69,36 @@
     width: 235px;
   }
 
-  #client_complaints_attributes_0_symptom {
-    width: 240px;
+  #client_complaints_attributes_0_symptom, .symptom-nested {
+    width: 240px !important;
   }
 
-  #client_complaints_attributes_0_diagnosis {
-    width: 243px;
+  #client_complaints_attributes_0_diagnosis, .diagnosis-nested {
+    width: 243px !important;
   }
   
   #client_complaints_attributes_0_alleviated_by, #client_complaints_attributes_0_aggravated_by {
     width: 182px;
   }
 
+  .alleviated-nested, .aggravated-nested {
+    width: 182px !important;
+  }
+
   #client_complaints_attributes_0_inhibited_activity, #client_complaints_attributes_0_treatment {
     width: 310px;
   }
+
+  .inhibited-nested, .treatment-nested {
+    width: 310px !important;
+  }
+
   .label-margin {
     margin-right: 10px;
+  }
+
+  .nested-fields {
+    margin-bottom: 20px;
   }
 }
 
