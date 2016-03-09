@@ -104,6 +104,18 @@
         <% end %>
         <%= link_to_add_association 'Add Another Complaint', f, :complaints, :data => {"association-insertion-method" => "after" }, class: "btn btn-success btn-xs"%>
       </div>
+      <div class="form-blocks" id="surgeries-form"><legend>Surgeries</legend>
+        <%= f.fields_for :surgeries do |surgery| %>
+          <%= render 'surgery_fields', :f => surgery %>
+        <% end %>
+        <%= link_to_add_association 'Add Another Surgery', f, :surgeries, :data => {"association-insertion-method" => "after" }, class: "btn btn-success btn-xs"%>
+      </div>
+      <div class="form-blocks" id="hospitalizations-form"><legend>Hospitalizations</legend>
+        <%= f.fields_for :hospitalizations do |hospitalization| %>
+          <%= render 'hospitalization_fields', :f => hospitalization %>
+        <% end %>
+        <%= link_to_add_association 'Add Another Hospitalization', f, :hospitalizations, :data => {"association-insertion-method" => "after" }, class: "btn btn-success btn-xs"%>
+      </div>
       <div class="form-blocks"><legend>Lifestyle</legend>
         <div class="form-group">
           <%= f.label :exercise_frequency, class: "sr-only" %>

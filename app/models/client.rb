@@ -11,4 +11,8 @@ class Client < ActiveRecord::Base
   validates :middle_initial, length: { maximum: 1 }
 
   accepts_nested_attributes_for :complaints, reject_if: :all_blank, allow_destroy: true
+  accepts_nested_attributes_for :surgeries, reject_if: :all_blank, allow_destroy: true
+  accepts_nested_attributes_for :medications, reject_if: :all_blank, allow_destroy: true
+  accepts_nested_attributes_for :allergies, reject_if: :all_blank, allow_destroy: true
+  accepts_nested_attributes_for :hospitalizations, reject_if: :all_blank, allow_destroy: true
 end

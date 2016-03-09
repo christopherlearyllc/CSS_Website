@@ -1,0 +1,13 @@
+<div class="nested-fields">
+  <div class="form-group field">
+    <%= f.label :surgical_procedure, class: "sr-only" %>
+    <%= f.text_field :surgical_procedure, class: "form-control symptom-nested", placeholder: "Procedure"  %>
+  </div>
+  <div class="form-group field">
+    <%= f.label :year, "Date of Procedure:", class: "label-margin" %>
+    <%= f.select :year, (Date.current.year - 50)...(Date.current.year + 1), {:prompt => 'Year' }, class: "form-control" %>
+  </div>
+  <div class="form-group field"> 
+    <%= link_to_remove_association "Remove Surgery", f, class: "btn btn-danger btn-xs remove-nested" %>
+  </div>
+</div>
