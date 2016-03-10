@@ -116,6 +116,18 @@
         <% end %>
         <%= link_to_add_association 'Add Another Hospitalization', f, :hospitalizations, :data => {"association-insertion-method" => "after" }, class: "btn btn-success btn-xs"%>
       </div>
+      <div class="form-blocks" id="medications-form"><legend>Medications <span class="meds-text">(Vitamins, herbs, inhalers, prescribed drugs)</span></legend>
+        <%= f.fields_for :medications do |medication| %>
+          <%= render 'medication_fields', :f => medication %>
+        <% end %>
+        <%= link_to_add_association 'Add Another Medication', f, :medications, :data => {"association-insertion-method" => "after" }, class: "btn btn-success btn-xs"%>
+      </div>
+      <div class="form-blocks" id="allergies-form"><legend>Allergies</legend>
+        <%= f.fields_for :allergies do |allergy| %>
+          <%= render 'allergy_fields', :f => allergy %>
+        <% end %>
+        <%= link_to_add_association 'Add Another Allergy', f, :allergies, :data => {"association-insertion-method" => "after" }, class: "btn btn-success btn-xs"%>
+      </div>
       <div class="form-blocks"><legend>Lifestyle</legend>
         <div class="form-group">
           <%= f.label :exercise_frequency, class: "sr-only" %>

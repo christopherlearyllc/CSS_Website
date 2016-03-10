@@ -69,7 +69,7 @@
     width: 235px;
   }
 
-  #client_complaints_attributes_0_symptom, .symptom-nested {
+  #client_complaints_attributes_0_symptom, .symptom-nested, .hospitalization-nested, .surgery-nested {
     width: 240px !important;
   }
 
@@ -91,6 +91,10 @@
 
   .inhibited-nested, .treatment-nested {
     width: 310px !important;
+  }
+
+  .allergy-nested {
+    width: 200px !important;
   }
 
   .label-margin {
@@ -125,4 +129,8 @@
 
 .month  {
   width: 99px;
+}
+
+.meds-text {
+  font-size: 14px;
 }

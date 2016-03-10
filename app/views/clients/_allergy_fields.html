@@ -1,0 +1,13 @@
+<div class="nested-fields">
+  <div class="form-group field">
+    <%= f.label :allergen, class: "sr-only" %>
+    <%= f.text_field :allergen, class: "form-control allergy-nested", placeholder: "Allergen/Substance"  %>
+  </div>
+  <div class="form-group field">
+    <%= f.label :reaction, class: "sr-only" %>
+    <%= f.text_field :reaction, class: "form-control allergy-nested", placeholder: "Reaction"  %>
+  </div>
+  <div class="form-group field"> 
+    <%= link_to_remove_association "Remove Allergy", f, class: "btn btn-danger btn-xs remove-nested" %>
+  </div>
+</div>
