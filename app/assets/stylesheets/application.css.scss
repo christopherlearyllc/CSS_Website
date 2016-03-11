@@ -104,6 +104,10 @@
   .nested-fields {
     margin-bottom: 20px;
   }
+
+  .disease-nested .form-control {
+    width: 210px;
+  }
 }
 
 
@@ -131,6 +135,6 @@
   width: 99px;
 }
 
-.meds-text {
+.legend-subtext {
   font-size: 14px;
 }

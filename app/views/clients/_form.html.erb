@@ -210,6 +210,98 @@
           </div>
         </div>
       </div>
+      <div class="form-blocks"><legend>Personal Disease History <span class="legend-subtext">(please include dates)</span></legend>
+        <%= f.fields_for :personal_disease_history do |personal_disease| %>
+          <div class="form-group disease-nested">
+            <div class="stacked-inputs">
+              <%= personal_disease.label :heart_disease, class: "sr-only" %>
+              <%= personal_disease.text_field :heart_disease, class: "form-control", placeholder: "Heart Disease" %>
+   
+              <%= personal_disease.label :cancer, class: "sr-only" %>
+              <%= personal_disease.text_field :cancer, class: "form-control", placeholder: "Cancer" %>
+
+              <%= personal_disease.label :diabetes, class: "sr-only" %>
+              <%= personal_disease.text_field :diabetes, class: "form-control", placeholder: "Diabetes" %>
+            </div>
+            <div class="stacked-inputs">
+              <%= personal_disease.label :hypertension, class: "sr-only" %>
+              <%= personal_disease.text_field :hypertension, class: "form-control", placeholder: "Hypertension" %>
+
+              <%= personal_disease.label :thyroid_disorder, class: "sr-only" %>
+              <%= personal_disease.text_field :thyroid_disorder, class: "form-control", placeholder: "Thyroid Disorder" %>
+
+              <%= personal_disease.label :hepatitis, class: "sr-only" %>
+              <%= personal_disease.text_field :hepatitis, class: "form-control", placeholder: "Hepatitis" %>
+            </div>
+            <div class="stacked-inputs">
+              <%= personal_disease.label :asthma_allergies, class: "sr-only" %>
+              <%= personal_disease.text_field :asthma_allergies, class: "form-control", placeholder: "Asthma/Allergies" %>
+
+              <%= personal_disease.label :seizures, class: "sr-only" %>
+              <%= personal_disease.text_field :seizures, class: "form-control", placeholder: "Seizures" %>
+
+              <%= personal_disease.label :stroke, class: "sr-only" %>
+              <%= personal_disease.text_field :stroke, class: "form-control", placeholder: "Stroke" %>
+            </div>
+            <div class="stacked-inputs">
+              <%= personal_disease.label :neurological_disorders, class: "sr-only" %>
+              <%= personal_disease.text_field :neurological_disorders, class: "form-control", placeholder: "Neurological Disorders" %>
+
+              <%= personal_disease.label :substance_abuse, class: "sr-only" %>
+              <%= personal_disease.text_field :substance_abuse, class: "form-control", placeholder: "Substance Abuse" %>
+
+              <%= personal_disease.label :other, class: "sr-only" %>
+              <%= personal_disease.text_field :other, class: "form-control", placeholder: "Other" %>
+            </div>
+          </div>
+        <% end %>
+      </div>
+      <div class="form-blocks"><legend>Family Disease History <span class="legend-subtext">(please include dates)</span></legend>
+        <%= f.fields_for :family_disease_history do |family_disease| %>
+          <div class="form-group disease-nested">
+            <div class="stacked-inputs">
+              <%= family_disease.label :heart_disease, class: "sr-only" %>
+              <%= family_disease.text_field :heart_disease, class: "form-control", placeholder: "Heart Disease" %>
+   
+              <%= family_disease.label :cancer, class: "sr-only" %>
+              <%= family_disease.text_field :cancer, class: "form-control", placeholder: "Cancer" %>
+
+              <%= family_disease.label :diabetes, class: "sr-only" %>
+              <%= family_disease.text_field :diabetes, class: "form-control", placeholder: "Diabetes" %>
+            </div>
+            <div class="stacked-inputs">
+              <%= family_disease.label :hypertension, class: "sr-only" %>
+              <%= family_disease.text_field :hypertension, class: "form-control", placeholder: "Hypertension" %>
+
+              <%= family_disease.label :thyroid_disorder, class: "sr-only" %>
+              <%= family_disease.text_field :thyroid_disorder, class: "form-control", placeholder: "Thyroid Disorder" %>
+
+              <%= family_disease.label :hepatitis, class: "sr-only" %>
+              <%= family_disease.text_field :hepatitis, class: "form-control", placeholder: "Hepatitis" %>
+            </div>
+            <div class="stacked-inputs">
+              <%= family_disease.label :asthma_allergies, class: "sr-only" %>
+              <%= family_disease.text_field :asthma_allergies, class: "form-control", placeholder: "Asthma/Allergies" %>
+
+              <%= family_disease.label :seizures, class: "sr-only" %>
+              <%= family_disease.text_field :seizures, class: "form-control", placeholder: "Seizures" %>
+
+              <%= family_disease.label :stroke, class: "sr-only" %>
+              <%= family_disease.text_field :stroke, class: "form-control", placeholder: "Stroke" %>
+            </div>
+            <div class="stacked-inputs">
+              <%= family_disease.label :neurological_disorders, class: "sr-only" %>
+              <%= family_disease.text_field :neurological_disorders, class: "form-control", placeholder: "Neurological Disorders" %>
+
+              <%= family_disease.label :substance_abuse, class: "sr-only" %>
+              <%= family_disease.text_field :substance_abuse, class: "form-control", placeholder: "Substance Abuse" %>
+
+              <%= family_disease.label :other, class: "sr-only" %>
+              <%= family_disease.text_field :other, class: "form-control", placeholder: "Other" %>
+            </div>
+          </div>
+        <% end %>
+      </div>
     </div>
   </div>
   <div class="remove-nested">

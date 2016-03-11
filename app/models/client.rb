@@ -15,4 +15,6 @@ class Client < ActiveRecord::Base
   accepts_nested_attributes_for :medications, reject_if: :all_blank, allow_destroy: true
   accepts_nested_attributes_for :allergies, reject_if: :all_blank, allow_destroy: true
   accepts_nested_attributes_for :hospitalizations, reject_if: :all_blank, allow_destroy: true
+  accepts_nested_attributes_for :personal_disease_history, reject_if: :all_blank, allow_destroy: true
+  accepts_nested_attributes_for :family_disease_history, reject_if: :all_blank, allow_destroy: true
 end
