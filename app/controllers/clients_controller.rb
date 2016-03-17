@@ -6,6 +6,8 @@ class ClientsController < ApplicationController
 
   def show
     @client = Client.find(params[:id])
+    @height_feet = @client.height_feet(@client.height)
+    @height_inches = @client.height_inches(@client.height)
   end
 
   def new
