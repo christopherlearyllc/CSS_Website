@@ -4,13 +4,72 @@
   </div>
   <div class="panel-body">
     <div class="row">
-      <div class="col-md-3"><p><strong>Name: </strong> <%= "#{@client.first_name} #{@client.middle_initial} #{@client.last_name}" %></p></div>
-      <div class="col-md-3"><p><strong>Gender: </strong><%= @client.gender %></p></div>
-      <div class="col-md-3"><p><strong>Date of Birth: </strong><%= @client.date_of_birth %></div>
-      <div class="col-md-3"><p><strong>Height: </strong><%= @height_feet %> ft. <%= @height_inches %> inches</p></div>
+      <div class="col-md-12"><legend><%= "#{@client.first_name} #{@client.middle_initial}. #{@client.last_name}" %></div>
     </div>
-    <p><strong>Weight: </strong><%= @client.weight %></p>
-    <p><strong>Address: </strong><%= @client.address %></p>
-    <p><strong>Home Phone: </strong><%= @client.home_phone %></p>
-  </div>
+    <h4 class="grey-header">Personal Information</h4>
+    <div class="row">
+      <div class="col-md-3"><p><strong>Gender: </strong><%= @client.gender %></p></div>
+      <div class="col-md-3"><p><strong>Date of Birth: </strong><%= @client.date_of_birth %></p></div>
+      <div class="col-md-3"><p><strong>Height: </strong><%= @height_feet %> ft. <%= @height_inches %> in.</p></div>
+      <div class="col-md-3"><p><strong>Weight: </strong> <%= @client.weight %> lbs.</p></div>
+    </div>
+    <h4 class="grey-header">Contact Information</h4>
+    <div class="row">
+      <div class="col-md-3"><p><strong>Address: </strong><%= @client.address %> <%= @client.city %>, <%= @client.state %> <%= @client.zip %></div>
+      <div class="col-md-3"><p><strong>Home Phone: </strong><%= @client.home_phone %></div>
+      <div class="col-md-3"><p><strong>Work Phone: </strong><%= @client.work_phone %></div>
+      <div class="col-md-3"><p><strong>Physician: </strong><%= @client.physician %></div>
+    </div>
+    <div class="row">
+      <div class="col-md-3"><p><strong>Referred By: </strong><%= @client.referred_by %></div>
+      <div class="col-md-3"><p><strong>Emergency Contact: </strong><%= @client.emergency_contact_name %></div>
+      <div class="col-md-3"><p><strong>E.C. Phone: </strong><%= @client.emergency_contact_phone %></div>
+      <div class="col-md-3"></div>
+    </div>
+    <h4 class="grey-header">Complaints</h4>
+    <% @client.complaints.each_with_index do |complaint, i| %>
+      <div class="row">
+        <div class="col-md-4"><p><span class="number-grey"><%= (i + 1) %>.</span> <strong>Symptom: </strong><%= complaint.symptom %></div>
+        <div class="col-md-4"><p><strong>Date Started: </strong><%= complaint.date_started %></div>
+        <div class="col-md-4"><p><strong>Alleviated By: </strong><%= complaint.alleviated_by%></div>
+      </div>
+      <div class="row">
+        <div class="col-md-4"><strong>Aggravated By: </strong><%= complaint.aggravated_by%></div>
+        <div class="col-md-4"><p><strong>Diagnosis: </strong><%= complaint.diagnosis %></div>
+        <div class="col-md-4"><p><strong>Inhibited Activity: </strong><%= complaint.inhibited_activity %></div>
+      </div>
+      <div class="row">
+        <div class="col-md-4"><p><strong>Treatment: </strong><%= complaint.treatment%></div>
+      </div>
+    <% end %>
+    <h4 class="grey-header">Surgeries</h4>
+    <% @client.surgeries.each_with_index do |surgery, i| %>
+      <div class="row">
+        <div class="col-md-4"><p><span class="number-grey"><%= (i + 1) %>.</span> <strong>Procedure: </strong><%= surgery.surgical_procedure %></div>
+        <div class="col-md-4"><p><strong>Date Started: </strong><%= surgery.year %></div>
+      </div>
+    <% end %>
+    <h4 class="grey-header">Hospitalizations</h4>
+    <% @client.hospitalizations.each_with_index do |hospitalization, i| %>
+      <div class="row">
+        <div class="col-md-4"><p><span class="number-grey"><%= (i + 1) %>.</span> <strong>Reason: </strong><%= hospitalization.hospitalization_reason %></div>
+        <div class="col-md-4"><p><strong>Year: </strong><%= hospitalization.year %></div>
+      </div>
+    <% end %>
+    <h4 class="grey-header">Medications</h4>
+    <% @client.medications.each_with_index do |medication, i| %>
+      <div class="row">
+        <div class="col-md-4"><p><span class="number-grey"><%= (i + 1) %>.</span> <strong>Name: </strong><%= medication.name %></div>
+        <div class="col-md-4"><p><strong>Strength: </strong><%= medication.strength %></div>
+        <div class="col-md-4"><p><strong>Frequency Taken: </strong><%= medication.frequency %></div>
+      </div>
+    <% end %>
+    <h4 class="grey-header">Allergies</h4>
+    <% @client.allergies.each_with_index do |allergy, i| %>
+      <div class="row">
+        <div class="col-md-4"><p><span class="number-grey"><%= (i + 1) %>. </span><strong>Allergen: </strong><%= allergy.allergen %></div>
+        <div class="col-md-4"><p><strong>Reaction: </strong><%= allergy.reaction %></div>
+      </div>
+    <% end %>
 </div>
+
