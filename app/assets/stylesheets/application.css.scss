@@ -3,7 +3,7 @@
 @import "bootstrap";
 @import "bootswatch/lumen/bootswatch";
 
-@media (min-width: 768px) {
+@media (min-width: 769px) {
 
   .panel-body {
     padding: 15px 30px;
@@ -112,6 +112,10 @@
   .panel-info {
     margin: 20px 40px;
   }
+  
+  .complaint-padding {
+    padding-left: 29px;
+  }
 }
 
 
@@ -153,4 +157,8 @@
 .number-grey {
   color: #999999;
   font-weight: 700;
+}
+
+.complaint-margin {
+  margin-bottom: 10px;
 }

@@ -116,7 +116,7 @@
         <% end %>
         <%= link_to_add_association 'Add Another Hospitalization', f, :hospitalizations, :data => {"association-insertion-method" => "after" }, class: "btn btn-success btn-xs"%>
       </div>
-      <div class="form-blocks" id="medications-form"><legend>Medications <span class="meds-text">(Vitamins, herbs, inhalers, prescribed drugs)</span></legend>
+      <div class="form-blocks" id="medications-form"><legend>Medications <span class="legend-subtext">(Vitamins, herbs, inhalers, prescribed drugs)</span></legend>
         <%= f.fields_for :medications do |medication| %>
           <%= render 'medication_fields', :f => medication %>
         <% end %>
@@ -210,7 +210,7 @@
           </div>
         </div>
       </div>
-      <div class="form-blocks"><legend>Personal Disease History <span class="legend-subtext">(please include dates)</span></legend>
+      <div class="form-blocks"><legend>Personal Disease History <span class="legend-subtext">(Please include dates. Type n/a if not applicable.)</span></legend>
         <%= f.fields_for :personal_disease_history do |personal_disease| %>
           <div class="form-group disease-nested">
             <div class="stacked-inputs">
@@ -256,7 +256,7 @@
           </div>
         <% end %>
       </div>
-      <div class="form-blocks"><legend>Family Disease History <span class="legend-subtext">(please include dates)</span></legend>
+      <div class="form-blocks"><legend>Family Disease History <span class="legend-subtext">(Please include dates. Type n/a if not applicable.)</span></legend>
         <%= f.fields_for :family_disease_history do |family_disease| %>
           <div class="form-group disease-nested">
             <div class="stacked-inputs">
