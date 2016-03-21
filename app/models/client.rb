@@ -7,7 +7,7 @@ class Client < ActiveRecord::Base
   has_many :medications, :dependent => :destroy
   has_many :allergies, :dependent => :destroy
   
-  # validates :first_name, :last_name, :height, :weight, :address, :home_phone, :alcohol_consumption, :smoking_habit, presence: true
+  validates :first_name, :last_name, :height, :weight, :address, :home_phone, :alcohol_consumption, :smoking_habit, presence: true
   validates :middle_initial, length: { maximum: 1 }
 
   accepts_nested_attributes_for :complaints, reject_if: :all_blank, allow_destroy: true
@@ -15,8 +15,8 @@ class Client < ActiveRecord::Base
   accepts_nested_attributes_for :medications, reject_if: :all_blank, allow_destroy: true
   accepts_nested_attributes_for :allergies, reject_if: :all_blank, allow_destroy: true
   accepts_nested_attributes_for :hospitalizations, reject_if: :all_blank, allow_destroy: true
-  accepts_nested_attributes_for :personal_disease_history, reject_if: :all_blank, allow_destroy: true
-  accepts_nested_attributes_for :family_disease_history, reject_if: :all_blank, allow_destroy: true
+  accepts_nested_attributes_for :personal_disease_history, allow_destroy: true
+  accepts_nested_attributes_for :family_disease_history, allow_destroy: true
 
   def height_feet(height)
     height / 12

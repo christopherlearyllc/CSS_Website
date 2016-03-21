@@ -32,6 +32,13 @@ class ClientsController < ApplicationController
 
       redirect_to @client
     else
+      @client.complaints.build
+      @client.surgeries.build
+      @client.medications.build
+      @client.hospitalizations.build
+      @client.allergies.build
+      @client.build_personal_disease_history
+      @client.build_family_disease_history
       render 'new'
     end  
   end

@@ -1,16 +1,17 @@
 <%= form_for (@client), html: { class: "form-inline" } do |f| %>
    
   <% if @client.errors.any? %>
-  <div id="error_explanation">
+  <div class="alert alert-dismissible alert-danger">
+    <button type="button" class="close" data-dismiss="alert">×</button>
     <h2>
       <%= pluralize(@client.errors.count, "error") %> prohibited
       this client from being saved:
     </h2>
-    <ul>
+    <ol>
       <% @client.errors.full_messages.each do |msg| %>
         <li><%= msg %></li>
       <% end %>
-    </ul>
+    </ol>
   </div>
   <% end %>
 
@@ -19,6 +20,8 @@
       <h3 class="panel-title">Health History Form</h3>
     </div>
     <div class="panel-body">
+
+      <div class="panel-wrapper">
       <div class="form-blocks"><legend>Name</legend>
         <div class="form-group">
           <%= f.label :first_name, class: "sr-only" %>
@@ -210,7 +213,7 @@
           </div>
         </div>
       </div>
-      <div class="form-blocks"><legend>Personal Disease History <span class="legend-subtext">(Please include dates. Type n/a if not applicable.)</span></legend>
+      <div class="form-blocks"><legend>Personal Disease History <span class="legend-subtext">(Please include dates. Type "none" if not applicable.)</span></legend>
         <%= f.fields_for :personal_disease_history do |personal_disease| %>
           <div class="form-group disease-nested">
             <div class="stacked-inputs">
@@ -256,7 +259,7 @@
           </div>
         <% end %>
       </div>
-      <div class="form-blocks"><legend>Family Disease History <span class="legend-subtext">(Please include dates. Type n/a if not applicable.)</span></legend>
+      <div class="form-blocks"><legend>Family Disease History <span class="legend-subtext">(Please include dates. Type "none" if not applicable.)</span></legend>
         <%= f.fields_for :family_disease_history do |family_disease| %>
           <div class="form-group disease-nested">
             <div class="stacked-inputs">
@@ -303,8 +306,10 @@
         <% end %>
       </div>
     </div>
+
   </div>
-  <div class="remove-nested">
+  </div>
+  <div class="remove-nested button-center">
     <%= f.submit "Submit Form", class: "btn btn-primary btn-lg"%>
   </div>
 <% end %>
