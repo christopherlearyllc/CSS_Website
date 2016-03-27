@@ -9,7 +9,7 @@
 }
 
 }
-@media (min-width: 768px) {
+/*@media (min-width: 768px) {
 
   .panel-body {
     padding: 15px 30px;
@@ -29,8 +29,8 @@
 
   select {
     margin-right: 10px;
-  }
-
+  }*/
+/*
   #client_middle_initial {
     width: 102px;
   }
@@ -94,17 +94,13 @@
   #client_complaints_attributes_0_inhibited_activity, #client_complaints_attributes_0_treatment {
     width: 310px;
   }
-
-  .inhibited-nested, .treatment-nested {
+*/
+  /*.inhibited-nested, .treatment-nested {
     width: 310px !important;
-  }
+  }*/
 
-  .allergy-nested {
+  /*.allergy-nested {
     width: 200px !important;
-  }
-
-  .label-margin {
-    margin-right: 10px;
   }
 
   .nested-fields {
@@ -119,7 +115,7 @@
     margin: 20px 40px;
   }
   
-}
+}*/
 
 
 @media (min-width: 768px) and (max-width: 775px) {
@@ -256,4 +252,12 @@
 
 .panel.panel-success {
     margin-top: 20px;
+}
+
+.panel label {
+  color: #999999;
+  text-transform: uppercase;
+  font-weight: 700;
+  font-size: 13px;
+  display: block;
 }

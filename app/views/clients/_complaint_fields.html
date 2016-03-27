@@ -1,38 +1,42 @@
 <div class="nested-fields">
-  <div class="form-group field">
-    <%= f.label :symptom, class: "sr-only" %>
-    <%= f.text_field :symptom, class: "form-control symptom-nested", placeholder: "Symptom"  %>
-  </div>
-  <div class="form-group field">
-    <%= f.label :date_started, "Date originally noted:", class: "label-margin" %>
-    <%= f.date_select :date_started, :order => [:year, :month, :day], :start_year => 1950,  
-  :end_year => Date.current.year, :prompt => { :day => 'Day', :month => 'Month', :year => 'Year' }, :with_css_classes => true, :html=>{:class => "form-control"} %>
-  </div>
-  <div class="stacked-inputs">
-    <div class="form-group field">
-      <%= f.label :alleviated_by, class: "sr-only" %>
-      <%= f.text_field :alleviated_by, class: "form-control alleviated-nested", placeholder: "What makes it better?"  %>
+  <div class="row">
+    <div class="form-group field col-sm-12 col-md-6 col-lg-6">
+      <%= f.label :symptom %>
+      <%= f.text_field :symptom, class: "form-control symptom-nested" %>
     </div>
-    <div class="form-group field">
-      <%= f.label :aggravated_by, class: "sr-only" %>
-      <%= f.text_field :aggravated_by, class: "form-control aggravated-nested", placeholder: "What makes it worse?"  %>
-    </div>
-    <div class="form-group field">
-      <%= f.label :diagnosis, class: "sr-only" %>
-      <%= f.text_field :diagnosis, class: "form-control diagnosis-nested", placeholder: "Was it diagnosed? If yes, what was it?"  %>
+    <div class="form-group field col-sm-12 col-md-6 col-lg-6">
+      <%= f.label :date_started, "Date originally noted:", class: "label-top" %>
+      <%= f.date_select :date_started, :order => [:year, :month, :day], :start_year => 1950,  
+    :end_year => Date.current.year, :prompt => { :day => 'Day', :month => 'Month', :year => 'Year' }, :with_css_classes => true, :html=>{:class => "form-control"} %>
     </div>
   </div>
-  <div class="stacked-inputs">
-    <div class="form-group field">
-      <%= f.label :inhibited_activity, class: "sr-only" %>
-      <%= f.text_field :inhibited_activity, class: "form-control inhibited-nested", placeholder: "Which daily activities does it inhibit?"  %>
+  <div class="stacked-inputs row">
+    <div class="form-group field col-sm-12 col-md-6 col-lg-6">
+      <%= f.label :alleviated_by %>
+      <%= f.text_field :alleviated_by, class: "form-control alleviated-nested" %>
     </div>
-    <div class="form-group field">
-      <%= f.label :treatment, class: "sr-only" %>
-      <%= f.text_field :treatment, class: "form-control treatment-nested", placeholder: "What treatments have you tried?"  %>
+    <div class="form-group field col-sm-12 col-md-6 col-lg-6">
+      <%= f.label :aggravated_by %>
+      <%= f.text_field :aggravated_by, class: "form-control aggravated-nested" %>
     </div>
   </div>
-  <div class="form-group field"> 
-    <%= link_to_remove_association "Remove Complaint", f, class: "btn btn-danger btn-xs remove-nested" %>
+  <div class="row">
+    <div class="form-group field col-sm-12 col-md-3 col-lg-3">
+      <%= f.label :diagnosis %>
+      <%= f.text_field :diagnosis, class: "form-control diagnosis-nested" %>
+    </div>
+    <div class="stacked-inputs">
+      <div class="form-group field col-sm-12 col-md-3 col-lg-3">
+        <%= f.label :inhibited_activity %>
+        <%= f.text_field :inhibited_activity, class: "form-control inhibited-nested" %>
+      </div>
+      <div class="form-group field col-sm-12 col-md-3 col-lg-3">
+        <%= f.label :treatment %>
+        <%= f.text_field :treatment, class: "form-control treatment-nested" %>
+      </div>
+    </div>
+    <div class="form-group field col-sm-12 col-md-3 col-lg-3"> 
+      <%= link_to_remove_association "Remove Complaint", f, class: "btn btn-danger btn-xs remove-nested" %>
+    </div>
   </div>
 </div>
