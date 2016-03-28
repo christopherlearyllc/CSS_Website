@@ -29,8 +29,8 @@
 
   select {
     margin-right: 10px;
-  }*/
-/*
+  }
+
   #client_middle_initial {
     width: 102px;
   }
@@ -94,18 +94,15 @@
   #client_complaints_attributes_0_inhibited_activity, #client_complaints_attributes_0_treatment {
     width: 310px;
   }
-*/
-  /*.inhibited-nested, .treatment-nested {
-    width: 310px !important;
-  }*/
 
-  /*.allergy-nested {
+  .inhibited-nested, .treatment-nested {
+    width: 310px !important;
+  }
+
+  .allergy-nested {
     width: 200px !important;
   }
 
-  .nested-fields {
-    margin-bottom: 20px;
-  }
 
   .disease-nested .form-control {
     width: 210px;
@@ -115,9 +112,21 @@
     margin: 20px 40px;
   }
   
-}*/
+} */
 
+@media (min-width: 769px) {
+  .nested-fields {
+    margin-bottom: 20px;
+  }
 
+  a.btn.btn-danger.btn-xs.remove-nested.remove_fields.existing {
+    margin-top: 22px;
+  }
+
+  a.btn.btn-success.btn-xs.add_fields {
+    margin-bottom: 30px;
+  }
+}
 @media (min-width: 768px) and (max-width: 775px) {
 
   .panel.panel-success {

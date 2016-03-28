@@ -138,51 +138,64 @@
         <%= link_to_add_association 'Add Another Allergy', f, :allergies, :data => {"association-insertion-method" => "after" }, class: "btn btn-success btn-xs"%>
       </div>
       <div class="form-blocks"><legend>Lifestyle</legend>
-        <div class="form-group">
-          <%= f.label :exercise_frequency%>
-          <%= f.text_field :exercise_frequency, class: "form-control", placeholder: "Exercise Frequency"  %>
-        </div>
-        <div class="form-group">
-          <%= f.label :exercise_type%>
-          <%= f.text_field :exercise_type, class: "form-control", placeholder: "Exercise Type"  %>
+        <div class="row">
+          <div class="form-group col-sm-12 col-md-4 col-lg-4">
+            <%= f.label :exercise_frequency %>
+            <%= f.text_field :exercise_frequency, class: "form-control", placeholder: "Exercise Frequency"  %>
+          </div>
+          <div class="form-group col-sm-12 col-md-4 col-lg-4">
+            <%= f.label :exercise_type %>
+            <%= f.text_field :exercise_type, class: "form-control", placeholder: "Exercise Type"  %>
+          </div>
         </div>
       </div>
       <div class="form-blocks"><legend>Diet</legend>
-        <div class="form-group">
-          <%= f.label :breakfast%>
-          <%= f.text_field :breakfast, class: "form-control", placeholder: "Breakfast" %>
-        </div>
-        <div class="form-group">
-          <%= f.label :lunch %>
-          <%= f.text_field :lunch, class: "form-control", placeholder: "Lunch" %>
-        </div>
-        <div class="stacked-inputs">
-          <div class="form-group">
-            <%= f.label :dinner %>
-            <%= f.text_field :dinner, class: "form-control", placeholder: "Dinner" %>
+        <div class="row">
+          <div class="form-group col-sm-12 col-md-6 col-lg-6">
+            <%= f.label :breakfast %>
+            <%= f.text_field :breakfast, class: "form-control", placeholder: "Breakfast" %>
           </div>
-          <div class="form-group">
-            <%= f.label :snack %>
-            <%= f.text_field :snack, class: "form-control", placeholder: "Snacks" %>
+          <div class="form-group col-sm-12 col-md-6 col-lg-6">
+            <%= f.label :lunch %>
+            <%= f.text_field :lunch, class: "form-control", placeholder: "Lunch" %>
+          </div>
+        </div>
+        <div class="row">
+          <div class="stacked-inputs">
+            <div class="form-group col-sm-12 col-md-6 col-lg-6">
+              <%= f.label :dinner %>
+              <%= f.text_field :dinner, class: "form-control", placeholder: "Dinner" %>
+            </div>
+            <div class="form-group col-sm-12 col-md-6 col-lg-6">
+              <%= f.label :snack %>
+              <%= f.text_field :snack, class: "form-control", placeholder: "Snacks" %>
+            </div>
           </div>
         </div>
       </div>
       <div class="form-blocks"><legend>Caffeine</legend>
-        <div class="form-group">
-          <%= f.select(:drink_coffee, options_for_select([['Yes'], ['No']]), {:prompt => "Drink Coffee?"}, { class: 'form-control' })%>
-        </div>
-        <div class="form-group">
-          <%= f.select(:drink_tea, options_for_select([['Yes'], ['No']]), {:prompt => "Drink Tea?"}, { class: 'form-control' })%>
-        </div>
-        <div class="form-group">
-          <%= f.select(:drink_cola, options_for_select([['Yes'], ['No']]), {:prompt => "Drink Cola?"}, { class: 'form-control' })%>
-        </div>
-        <div class="form-group">
-          <%= f.select(:drink_other_caffeine, options_for_select([['Yes'], ['No']]), {:prompt => "Drink other Caffeine?"}, { class: 'form-control' })%>
-        </div>
-        <div class="form-group">
-          <%= f.label :caffeine_cups %>
-          <%= f.select(:caffeine_cups, options_for_select(0...11), {:prompt => "Cups per Day" }, { class: 'form-control' }) %>
+        <div class="row">
+          <div class="form-group col-sm-12 col-md-2 col-lg-2">
+            <%= f.label :drink_coffee, "Drink coffee?" %>
+            <%= f.select(:drink_coffee, options_for_select([['Yes'], ['No']]), {:prompt => "Drink Coffee?"}, { class: 'form-control' })%>
+          </div>
+          <div class="form-group col-sm-12 col-md-2 col-lg-2">
+            <%= f.label :drink_tea, "Drink tea?" %>
+            <%= f.select(:drink_tea, options_for_select([['Yes'], ['No']]), {:prompt => "Drink Tea?"}, { class: 'form-control' })%>
+          </div>
+          <div class="form-group col-sm-12 col-md-2 col-lg-2">
+            <%= f.label :drink_cola, "Drink cola?" %>
+            <%= f.select(:drink_cola, options_for_select([['Yes'], ['No']]), {:prompt => "Drink Cola?"}, { class: 'form-control' })%>
+          </div>
+        
+          <div class="form-group col-sm-12 col-md-2 col-lg-2">
+            <%= f.label :drink_other_caffeine, "Other Caffeine?" %>
+            <%= f.select(:drink_other_caffeine, options_for_select([['Yes'], ['No']]), {:prompt => "Drink other Caffeine?"}, { class: 'form-control' })%>
+          </div>
+          <div class="form-group col-sm-12 col-md-2 col-lg-2">
+            <%= f.label :caffeine_cups, "Cups per Day:" %>
+            <%= f.select(:caffeine_cups, options_for_select(0...11), {:prompt => "Cups per Day" }, { class: 'form-control' }) %>
+          </div>
         </div>
       </div>
       <div class="form-blocks"><legend>Alcohol</legend>
