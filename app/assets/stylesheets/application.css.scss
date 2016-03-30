@@ -130,6 +130,10 @@
   .disease-nested .row {
     margin: 15px 0 0 0;
   }
+
+  .disease-nested .col-sm-12.col-md-4.col-lg-4 {
+    padding-left: 0;
+  }
 }
 @media (min-width: 768px) and (max-width: 775px) {
 
