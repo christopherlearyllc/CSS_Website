@@ -1,11 +1,11 @@
 <div class="nested-fields row">
   <div class="form-group field col-sm-12 col-md-6 col-lg-6">
-    <%= f.label :hospitalization_reason %>
-    <%= f.text_field :hospitalization_reason, class: "form-control", placeholder: "Reason for Hospitalization"  %>
+    <%= f.label :hospitalization_reason, "Reason for Hospitalization" %>
+    <%= f.text_field :hospitalization_reason, class: "form-control" %>
   </div>
   <div class="form-group field col-sm-12 col-md-3 col-lg-3">
     <%= f.label :year, "Year of Hospitalization:" %>
-    <%= f.select :year, (Date.current.year - 50)...(Date.current.year + 1), {:prompt => 'Year' }, class: "form-control" %>
+    <%= f.select :year, (Date.current.year - 50)...(Date.current.year + 1), {:prompt => 'Select' }, class: "form-control" %>
   </div>
   <div class="form-group field col-sm-12 col-md-3 col-lg-3"> 
     <%= link_to_remove_association "Remove Hospitalization", f, class: "btn btn-danger btn-xs remove-nested" %>

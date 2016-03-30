@@ -48,7 +48,7 @@
           </div>
           <div class="form-group col-sm-12 col-md-2 col-lg-2">
             <%= f.label :weight, "Gender" %>
-            <%= f.select(:gender, options_for_select([['Male'], ['Female']]), {:prompt => "Gender"}, { class: 'form-control' })%>
+            <%= f.select(:gender, options_for_select([['Male'], ['Female']]), {:prompt => "Select"}, { class: 'form-control' })%>
           </div>
           <div class="stacked-inputs">
             <div class="form-group col-sm-12 col-md-6 col-lg-6">
@@ -71,7 +71,7 @@
           </div>
           <div class="form-group col-sm-12 col-md-3 col-lg-3">
             <%= f.label :state, "State" %>
-            <%= f.select(:state, us_states, {:prompt => ""}, { class: 'form-control'}) %>
+            <%= f.select(:state, us_states, {:prompt => "Select"}, { class: 'form-control'}) %>
           </div>
           <div class="form-group col-sm-12 col-md-3 col-lg-3">
             <%= f.label :zip %>
@@ -141,11 +141,11 @@
         <div class="row">
           <div class="form-group col-sm-12 col-md-4 col-lg-4">
             <%= f.label :exercise_frequency %>
-            <%= f.text_field :exercise_frequency, class: "form-control", placeholder: "Exercise Frequency"  %>
+            <%= f.text_field :exercise_frequency, class: "form-control" %>
           </div>
           <div class="form-group col-sm-12 col-md-4 col-lg-4">
             <%= f.label :exercise_type %>
-            <%= f.text_field :exercise_type, class: "form-control", placeholder: "Exercise Type"  %>
+            <%= f.text_field :exercise_type, class: "form-control" %>
           </div>
         </div>
       </div>
@@ -153,22 +153,22 @@
         <div class="row">
           <div class="form-group col-sm-12 col-md-6 col-lg-6">
             <%= f.label :breakfast %>
-            <%= f.text_field :breakfast, class: "form-control", placeholder: "Breakfast" %>
+            <%= f.text_field :breakfast, class: "form-control" %>
           </div>
           <div class="form-group col-sm-12 col-md-6 col-lg-6">
             <%= f.label :lunch %>
-            <%= f.text_field :lunch, class: "form-control", placeholder: "Lunch" %>
+            <%= f.text_field :lunch, class: "form-control" %>
           </div>
         </div>
         <div class="row">
           <div class="stacked-inputs">
             <div class="form-group col-sm-12 col-md-6 col-lg-6">
               <%= f.label :dinner %>
-              <%= f.text_field :dinner, class: "form-control", placeholder: "Dinner" %>
+              <%= f.text_field :dinner, class: "form-control" %>
             </div>
             <div class="form-group col-sm-12 col-md-6 col-lg-6">
               <%= f.label :snack %>
-              <%= f.text_field :snack, class: "form-control", placeholder: "Snacks" %>
+              <%= f.text_field :snack, class: "form-control" %>
             </div>
           </div>
         </div>
@@ -177,20 +177,20 @@
         <div class="row">
           <div class="form-group col-sm-12 col-md-2 col-lg-2">
             <%= f.label :drink_coffee, "Drink coffee?" %>
-            <%= f.select(:drink_coffee, options_for_select([['Yes'], ['No']]), {:prompt => "Drink Coffee?"}, { class: 'form-control' })%>
+            <%= f.select(:drink_coffee, options_for_select([['Yes'], ['No']]), {:prompt => "Select"}, { class: 'form-control' })%>
           </div>
           <div class="form-group col-sm-12 col-md-2 col-lg-2">
             <%= f.label :drink_tea, "Drink tea?" %>
-            <%= f.select(:drink_tea, options_for_select([['Yes'], ['No']]), {:prompt => "Drink Tea?"}, { class: 'form-control' })%>
+            <%= f.select(:drink_tea, options_for_select([['Yes'], ['No']]), {:prompt => "Select"}, { class: 'form-control' })%>
           </div>
           <div class="form-group col-sm-12 col-md-2 col-lg-2">
             <%= f.label :drink_cola, "Drink cola?" %>
-            <%= f.select(:drink_cola, options_for_select([['Yes'], ['No']]), {:prompt => "Drink Cola?"}, { class: 'form-control' })%>
+            <%= f.select(:drink_cola, options_for_select([['Yes'], ['No']]), {:prompt => "Select"}, { class: 'form-control' })%>
           </div>
         
           <div class="form-group col-sm-12 col-md-2 col-lg-2">
             <%= f.label :drink_other_caffeine, "Other Caffeine?" %>
-            <%= f.select(:drink_other_caffeine, options_for_select([['Yes'], ['No']]), {:prompt => "Drink other Caffeine?"}, { class: 'form-control' })%>
+            <%= f.select(:drink_other_caffeine, options_for_select([['Yes'], ['No']]), {:prompt => "Select"}, { class: 'form-control' })%>
           </div>
           <div class="form-group col-sm-12 col-md-2 col-lg-2">
             <%= f.label :caffeine_cups, "Cups per Day:" %>
@@ -199,81 +199,105 @@
         </div>
       </div>
       <div class="form-blocks"><legend>Alcohol</legend>
-        <div class="form-group">
-          <%= f.select(:alcohol_consumption, options_for_select([['Yes'], ['No']]), {:prompt => "Do You Drink Alcohol?"}, { class: 'form-control' })%>
-        </div>
-        <div class="form-group">
-          <%= f.label :alcohol_type %>
-          <%= f.text_field :alcohol_type, class: "form-control", placeholder: "Type(s) of Alcohol" %>
-        </div>
-        <div class="form-group">
-          <%= f.select(:drinks_per_week, options_for_select(0...36), {:prompt => "Drinks per Week"}, { class: 'form-control' })%>
-        </div>
-        <div class="form-group">
-          <%= f.select(:alcohol_abuse, options_for_select([['Yes'], ['No']]), {:prompt => "Is your drinking a concern?"}, { class: 'form-control' })%>
+        <div class="row">
+          <div class="form-group col-sm-12 col-md-3 col-lg-3">
+            <%= f.label :alcohol_consumption, "Drink Alcohol?" %>
+            <%= f.select(:alcohol_consumption, options_for_select([['Yes'], ['No']]), {:prompt => "Select"}, { class: 'form-control' })%>
+          </div>
+          <div class="form-group col-sm-12 col-md-3 col-lg-3">
+            <%= f.label :alcohol_type %>
+            <%= f.text_field :alcohol_type, class: "form-control" %>
+          </div>
+          <div class="form-group col-sm-12 col-md-3 col-lg-3">
+            <%= f.label :drinks_per_week, "Drinks per Week" %>
+            <%= f.select(:drinks_per_week, options_for_select(0...36), {:prompt => "Select"}, { class: 'form-control' })%>
+          </div>
+          <div class="form-group col-sm-12 col-md-3 col-lg-3">
+            <%= f.label :alcohol_abuse, "Concerned about your drinking?" %>
+            <%= f.select(:alcohol_abuse, options_for_select([['Yes'], ['No']]), {:prompt => "Select"}, { class: 'form-control' })%>
+          </div>
         </div>
       </div>
       <div class="form-blocks"><legend>Smoking</legend>
-        <div class="form-group">
-          <%= f.select(:smoking_habit, options_for_select([['Yes'], ['No']]), {:prompt => "Do You Smoke?"}, { class: 'form-control' })%>
-        </div>
-         <div class="form-group">
-          <%= f.label :smoking_substance %>
-          <%= f.text_field :smoking_substance, class: "form-control", placeholder: "Smoking Substance" %>
-        </div>
-        <div class="stacked-inputs">
-          <div class="form-group">
-            <%= f.label :years_smoker %>
-            <%= f.text_field :years_smoker, class: "form-control", placeholder: "How many years have you smoked?" %>
+        <div class="row">
+          <div class="form-group col-sm-12 col-md-3 col-lg-3">
+            <%= f.label :smoking_habit, "Do you smoke?" %>
+            <%= f.select(:smoking_habit, options_for_select([['Yes'], ['No']]), {:prompt => "Do You Smoke?"}, { class: 'form-control' })%>
           </div>
-          <div class="form-group">
-            <%= f.label :year_quit %>
-            <%= f.select(:year_quit, options_for_select(1950...Date.current.year), {:prompt => "What year did you quit?"}, { class: 'form-control' }) %>
+           <div class="form-group col-sm-12 col-md-3 col-lg-3">
+            <%= f.label :smoking_substance %>
+            <%= f.text_field :smoking_substance, class: "form-control" %>
+          </div>
+          <div class="stacked-inputs">
+            <div class="form-group col-sm-12 col-md-3 col-lg-3">
+              <%= f.label :years_smoker, "Years a smoker" %>
+              <%= f.text_field :years_smoker, class: "form-control" %>
+            </div>
+            <div class="form-group col-sm-12 col-md-3 col-lg-3">
+              <%= f.label :year_quit %>
+              <%= f.select(:year_quit, options_for_select(1950...Date.current.year), {:prompt => "What year did you quit?"}, { class: 'form-control' }) %>
+            </div>
           </div>
         </div>
       </div>
       <div class="form-blocks"><legend>Personal Disease History <span class="legend-subtext">(Please include dates. Type "none" if not applicable.)</span></legend>
         <%= f.fields_for :personal_disease_history do |personal_disease| %>
           <div class="form-group disease-nested">
-            <div class="stacked-inputs">
-              <%= personal_disease.label :heart_disease%>
-              <%= personal_disease.text_field :heart_disease, class: "form-control", placeholder: "Heart Disease" %>
-   
-              <%= personal_disease.label :cancer%>
-              <%= personal_disease.text_field :cancer, class: "form-control", placeholder: "Cancer" %>
-
-              <%= personal_disease.label :diabetes%>
-              <%= personal_disease.text_field :diabetes, class: "form-control", placeholder: "Diabetes" %>
+            <div class="stacked-inputs row">
+              <div class="col-sm-12 col-md-4 col-lg-4">
+                <%= personal_disease.label :heart_disease%>
+                <%= personal_disease.text_field :heart_disease, class: "form-control" %>
+              </div>
+              <div class="col-sm-12 col-md-4 col-lg-4">
+                <%= personal_disease.label :cancer%>
+                <%= personal_disease.text_field :cancer, class: "form-control" %>
+              </div>
+              <div class="col-sm-12 col-md-4 col-lg-4">
+                <%= personal_disease.label :diabetes%>
+                <%= personal_disease.text_field :diabetes, class: "form-control" %>
+              </div>
             </div>
-            <div class="stacked-inputs">
-              <%= personal_disease.label :hypertension%>
-              <%= personal_disease.text_field :hypertension, class: "form-control", placeholder: "Hypertension" %>
-
-              <%= personal_disease.label :thyroid_disorder%>
-              <%= personal_disease.text_field :thyroid_disorder, class: "form-control", placeholder: "Thyroid Disorder" %>
-
-              <%= personal_disease.label :hepatitis%>
-              <%= personal_disease.text_field :hepatitis, class: "form-control", placeholder: "Hepatitis" %>
+            <div class="stacked-inputs row">
+              <div class="col-sm-12 col-md-4 col-lg-4">
+                <%= personal_disease.label :hypertension%>
+                <%= personal_disease.text_field :hypertension, class: "form-control" %>
+              </div>
+              <div class="col-sm-12 col-md-4 col-lg-4">
+                <%= personal_disease.label :thyroid_disorder%>
+                <%= personal_disease.text_field :thyroid_disorder, class: "form-control" %>
+              </div>
+              <div class="col-sm-12 col-md-4 col-lg-4">
+                <%= personal_disease.label :hepatitis%>
+                <%= personal_disease.text_field :hepatitis, class: "form-control" %>
+              </div>
             </div>
-            <div class="stacked-inputs">
-              <%= personal_disease.label :asthma_allergies%>
-              <%= personal_disease.text_field :asthma_allergies, class: "form-control", placeholder: "Asthma/Allergies" %>
-
-              <%= personal_disease.label :seizures%>
-              <%= personal_disease.text_field :seizures, class: "form-control", placeholder: "Seizures" %>
-
-              <%= personal_disease.label :stroke%>
-              <%= personal_disease.text_field :stroke, class: "form-control", placeholder: "Stroke" %>
+            <div class="stacked-inputs row">
+              <div class="col-sm-12 col-md-4 col-lg-4">
+                <%= personal_disease.label :asthma_allergies%>
+                <%= personal_disease.text_field :asthma_allergies, class: "form-control" %>
+              </div>
+              <div class="col-sm-12 col-md-4 col-lg-4">
+                <%= personal_disease.label :seizures%>
+                <%= personal_disease.text_field :seizures, class: "form-control" %>
+              </div>
+              <div class="col-sm-12 col-md-4 col-lg-4">
+                <%= personal_disease.label :stroke%>
+                <%= personal_disease.text_field :stroke, class: "form-control" %>
+              </div>
             </div>
-            <div class="stacked-inputs">
-              <%= personal_disease.label :neurological_disorders%>
-              <%= personal_disease.text_field :neurological_disorders, class: "form-control", placeholder: "Neurological Disorders" %>
-
-              <%= personal_disease.label :substance_abuse%>
-              <%= personal_disease.text_field :substance_abuse, class: "form-control", placeholder: "Substance Abuse" %>
-
-              <%= personal_disease.label :other%>
-              <%= personal_disease.text_field :other, class: "form-control", placeholder: "Other" %>
+            <div class="stacked-inputs row">
+              <div class="col-sm-12 col-md-4 col-lg-4">
+                <%= personal_disease.label :neurological_disorders%>
+                <%= personal_disease.text_field :neurological_disorders, class: "form-control" %>
+              </div>
+              <div class="col-sm-12 col-md-4 col-lg-4">
+                <%= personal_disease.label :substance_abuse%>
+                <%= personal_disease.text_field :substance_abuse, class: "form-control" %>
+              </div>
+              <div class="col-sm-12 col-md-4 col-lg-4">
+                <%= personal_disease.label :other%>
+                <%= personal_disease.text_field :other, class: "form-control" %>
+              </div>
             </div>
           </div>
         <% end %>
@@ -281,45 +305,61 @@
       <div class="form-blocks"><legend>Family Disease History <span class="legend-subtext">(Please include dates. Type "none" if not applicable.)</span></legend>
         <%= f.fields_for :family_disease_history do |family_disease| %>
           <div class="form-group disease-nested">
-            <div class="stacked-inputs">
-              <%= family_disease.label :heart_disease%>
-              <%= family_disease.text_field :heart_disease, class: "form-control", placeholder: "Heart Disease" %>
-   
-              <%= family_disease.label :cancer%>
-              <%= family_disease.text_field :cancer, class: "form-control", placeholder: "Cancer" %>
-
-              <%= family_disease.label :diabetes%>
-              <%= family_disease.text_field :diabetes, class: "form-control", placeholder: "Diabetes" %>
+            <div class="stacked-inputs row">
+              <div class="col-sm-12 col-md-4 col-lg-4">
+                <%= family_disease.label :heart_disease%>
+                <%= family_disease.text_field :heart_disease, class: "form-control" %>
+              </div>
+              <div class="col-sm-12 col-md-4 col-lg-4">
+                <%= family_disease.label :cancer%>
+                <%= family_disease.text_field :cancer, class: "form-control" %>
+              </div>
+              <div class="col-sm-12 col-md-4 col-lg-4">
+                <%= family_disease.label :diabetes%>
+                <%= family_disease.text_field :diabetes, class: "form-control" %>
+              </div>
             </div>
-            <div class="stacked-inputs">
-              <%= family_disease.label :hypertension%>
-              <%= family_disease.text_field :hypertension, class: "form-control", placeholder: "Hypertension" %>
-
-              <%= family_disease.label :thyroid_disorder%>
-              <%= family_disease.text_field :thyroid_disorder, class: "form-control", placeholder: "Thyroid Disorder" %>
-
-              <%= family_disease.label :hepatitis%>
-              <%= family_disease.text_field :hepatitis, class: "form-control", placeholder: "Hepatitis" %>
+            <div class="stacked-inputs row">
+              <div class="col-sm-12 col-md-4 col-lg-4">
+                <%= family_disease.label :hypertension%>
+                <%= family_disease.text_field :hypertension, class: "form-control" %>
+              </div>
+              <div class="col-sm-12 col-md-4 col-lg-4">
+                <%= family_disease.label :thyroid_disorder%>
+                <%= family_disease.text_field :thyroid_disorder, class: "form-control" %>
+              </div>
+              <div class="col-sm-12 col-md-4 col-lg-4">
+                <%= family_disease.label :hepatitis%>
+                <%= family_disease.text_field :hepatitis, class: "form-control" %>
+              </div>
             </div>
-            <div class="stacked-inputs">
-              <%= family_disease.label :asthma_allergies%>
-              <%= family_disease.text_field :asthma_allergies, class: "form-control", placeholder: "Asthma/Allergies" %>
-
-              <%= family_disease.label :seizures%>
-              <%= family_disease.text_field :seizures, class: "form-control", placeholder: "Seizures" %>
-
-              <%= family_disease.label :stroke%>
-              <%= family_disease.text_field :stroke, class: "form-control", placeholder: "Stroke" %>
+            <div class="stacked-inputs row">
+              <div class="col-sm-12 col-md-4 col-lg-4">
+                <%= family_disease.label :asthma_allergies%>
+                <%= family_disease.text_field :asthma_allergies, class: "form-control" %>
+              </div>
+              <div class="col-sm-12 col-md-4 col-lg-4">
+                <%= family_disease.label :seizures%>
+                <%= family_disease.text_field :seizures, class: "form-control" %>
+              </div>
+              <div class="col-sm-12 col-md-4 col-lg-4">
+                <%= family_disease.label :stroke%>
+                <%= family_disease.text_field :stroke, class: "form-control" %>
+              </div>
             </div>
-            <div class="stacked-inputs">
-              <%= family_disease.label :neurological_disorders%>
-              <%= family_disease.text_field :neurological_disorders, class: "form-control", placeholder: "Neurological Disorders" %>
-
-              <%= family_disease.label :substance_abuse%>
-              <%= family_disease.text_field :substance_abuse, class: "form-control", placeholder: "Substance Abuse" %>
-
-              <%= family_disease.label :other%>
-              <%= family_disease.text_field :other, class: "form-control", placeholder: "Other" %>
+            <div class="stacked-inputs row">
+              <div class="col-sm-12 col-md-4 col-lg-4">
+                <%= family_disease.label :neurological_disorders%>
+                <%= family_disease.text_field :neurological_disorders, class: "form-control" %>
+              </div>
+              <div class="col-sm-12 col-md-4 col-lg-4">
+                <%= family_disease.label :substance_abuse%>
+                <%= family_disease.text_field :substance_abuse, class: "form-control" %>
+              </div>
+              <div class="col-sm-12 col-md-4 col-lg-4">
+                <%= family_disease.label :other%>
+                <%= family_disease.text_field :other, class: "form-control" %>
+              </div>
             </div>
           </div>
         <% end %>
@@ -336,3 +376,5 @@
         
 
   
+            
+              
