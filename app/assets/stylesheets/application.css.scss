@@ -6,121 +6,16 @@
 @media (max-width: 768px) {
   .disease-nested input {
     margin: 15px 0;
+  }
 }
-
-}
-/*@media (min-width: 768px) {
-
-  .panel-body {
-    padding: 15px 30px;
-  }
-  
-  .form-inline .form-group input {
-    margin-right: 10px;
-  }
-
-  .stacked-inputs {
-    margin: 10px 0;
-  }
-
-  .form-blocks {
-    margin-bottom: 40px;
-  }
-
-  select {
-    margin-right: 10px;
-  }
-
-  #client_middle_initial {
-    width: 102px;
-  }
-
-  #client_address {
-    width: 225px;
-  }
-
-  #client_city, #client_zip {
-    width: 129px;
-  }
-
-  #client_state {
-    width: 105px;
-  }
-
-  #client_date_of_birth {
-    width: 160px;
-  }
-
-  #client_physician {
-    width: 293px;
-  }
-
-  #client_referred_by {
-    width: 200px;
-  } 
-
-  #client_first_name, #client_last_name {
-    width: 250px;
-  }
-
-  #client_emergency_contact_name, #client_emergency_contact_phone {
-    width: 200px;
-  }
-
-  #client_exercise_frequency, #client_exercise_type, #client_breakfast, #client_lunch, #client_dinner, #client_snack {
-    width: 300px;
-  }
-
-  #client_smoking_habit, #client_smoking_substance, #client_years_smoker, #client_year_quit {
-    width: 235px;
-  }
-
-  #client_complaints_attributes_0_symptom, .symptom-nested, .hospitalization-nested, .surgery-nested {
-    width: 240px !important;
-  }
-
-  #client_complaints_attributes_0_diagnosis, .diagnosis-nested {
-    width: 243px !important;
-  }
-  
-  #client_complaints_attributes_0_alleviated_by, #client_complaints_attributes_0_aggravated_by {
-    width: 182px;
-  }
-
-  .alleviated-nested, .aggravated-nested {
-    width: 182px !important;
-  }
-
-  #client_complaints_attributes_0_inhibited_activity, #client_complaints_attributes_0_treatment {
-    width: 310px;
-  }
-
-  .inhibited-nested, .treatment-nested {
-    width: 310px !important;
-  }
-
-  .allergy-nested {
-    width: 200px !important;
-  }
-
-
-  .disease-nested .form-control {
-    width: 210px;
-  }
-
-  .panel-info {
-    margin: 20px 40px;
-  }
-  
-} */
 
 @media (min-width: 769px) {
   .nested-fields {
     margin-bottom: 20px;
   }
 
-  a.btn.btn-danger.btn-xs.remove-nested.remove_fields.existing {
-    margin-top: 22px;
+  a.btn.btn-danger.btn-xs.remove-nested {
+    margin-top: 25px;
   }
 
   a.btn.btn-success.btn-xs.add_fields {
@@ -134,7 +29,17 @@
   .disease-nested .col-sm-12.col-md-4.col-lg-4 {
     padding-left: 0;
   }
+
+  .client-show {
+    font-size: 15px;
+  }
+
+  .show-container {
+    margin-top: 20px;
+    margin-bottom: 20px;
+  }
 }
+
 @media (min-width: 768px) and (max-width: 775px) {
 
   .panel.panel-success {
