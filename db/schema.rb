@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160310023025) do
+ActiveRecord::Schema.define(version: 20160403155107) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -153,11 +153,11 @@ ActiveRecord::Schema.define(version: 20160310023025) do
 
   add_index "surgeries", ["client_id"], name: "index_surgeries_on_client_id", using: :btree
 
-  add_foreign_key "allergies", "clients"
-  add_foreign_key "complaints", "clients"
-  add_foreign_key "family_disease_histories", "clients"
-  add_foreign_key "hospitalizations", "clients"
-  add_foreign_key "medications", "clients"
-  add_foreign_key "personal_disease_histories", "clients"
-  add_foreign_key "surgeries", "clients"
+  add_foreign_key "allergies", "clients", on_delete: :cascade
+  add_foreign_key "complaints", "clients", on_delete: :cascade
+  add_foreign_key "family_disease_histories", "clients", on_delete: :cascade
+  add_foreign_key "hospitalizations", "clients", on_delete: :cascade
+  add_foreign_key "medications", "clients", on_delete: :cascade
+  add_foreign_key "personal_disease_histories", "clients", on_delete: :cascade
+  add_foreign_key "surgeries", "clients", on_delete: :cascade
 end
