@@ -1,1 +1,4 @@
 <%= render 'form' %>
+<div class="delete-client">
+<%= link_to 'Destroy', client_path(@client), method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger" %>
+</div>
