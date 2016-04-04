@@ -30,7 +30,7 @@ class ClientsController < ApplicationController
 
     if @client.save
 
-      redirect_to @client
+      redirect_to @client, notice: "Health history form saved!"
     else
       @client.complaints.build
       @client.surgeries.build
@@ -57,7 +57,7 @@ class ClientsController < ApplicationController
     @client = Client.find(params[:id])
     @client.destroy
 
-    redirect_to clients_path
+    redirect_to clients_path, alert: "Client deleted!"
   end
 
   private
