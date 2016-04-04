@@ -1,14 +1,16 @@
-
-<table class="table">
-  <tr class="info">
-    <td>Name</td>
-  <td>Client ID</td>
-  <td>Edit</td></tr>
-<% @clients.each do |client| %>
-  <tr>
+<table class="table index-table">
+  <thead>
+    <tr class="info">
+      <td>Name</td>
+      <td>Client ID</td>
+      <td>Edit Client</td>
+    </tr>
+  </thead>
+  <% @clients.each do |client| %>
+  <tr class="<%= cycle('active', '') -%>">
     <td><%= link_to "#{client.first_name} #{client.middle_initial} #{client.last_name}", client_path(client) %></td>
     <td><%= client.id %></td>
     <td><%= link_to 'Edit Info', edit_client_path(client) %></td>
   </tr>
-<% end %>
+  <% end %>
 </table>
