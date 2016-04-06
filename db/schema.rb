@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160406132344) do
+ActiveRecord::Schema.define(version: 20160406181326) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -19,12 +19,12 @@ ActiveRecord::Schema.define(version: 20160406132344) do
   create_table "allergies", force: :cascade do |t|
     t.string   "allergen"
     t.text     "reaction"
-    t.integer  "client_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.integer  "health_history_id"
+    t.datetime "created_at",        null: false
+    t.datetime "updated_at",        null: false
   end
 
-  add_index "allergies", ["client_id"], name: "index_allergies_on_client_id", using: :btree
+  add_index "allergies", ["health_history_id"], name: "index_allergies_on_health_history_id", using: :btree
 
   create_table "complaints", force: :cascade do |t|
     t.string   "symptom"
@@ -34,12 +34,12 @@ ActiveRecord::Schema.define(version: 20160406132344) do
     t.text     "diagnosis"
     t.text     "inhibited_activity"
     t.text     "treatment"
-    t.integer  "client_id"
+    t.integer  "health_history_id"
     t.datetime "created_at",         null: false
     t.datetime "updated_at",         null: false
   end
 
-  add_index "complaints", ["client_id"], name: "index_complaints_on_client_id", using: :btree
+  add_index "complaints", ["health_history_id"], name: "index_complaints_on_health_history_id", using: :btree
 
   create_table "family_disease_histories", force: :cascade do |t|
     t.text     "heart_disease"
@@ -54,12 +54,12 @@ ActiveRecord::Schema.define(version: 20160406132344) do
     t.text     "neurological_disorders"
     t.text     "substance_abuse"
     t.text     "other"
-    t.integer  "client_id"
+    t.integer  "health_history_id"
     t.datetime "created_at",             null: false
     t.datetime "updated_at",             null: false
   end
 
-  add_index "family_disease_histories", ["client_id"], name: "index_family_disease_histories_on_client_id", using: :btree
+  add_index "family_disease_histories", ["health_history_id"], name: "index_family_disease_histories_on_health_history_id", using: :btree
 
   create_table "health_histories", force: :cascade do |t|
     t.string   "first_name"
@@ -71,8 +71,8 @@ ActiveRecord::Schema.define(version: 20160406132344) do
     t.integer  "weight"
     t.string   "address"
     t.string   "home_phone"
-    t.datetime "created_at",                           null: false
-    t.datetime "updated_at",                           null: false
+    t.datetime "created_at",              null: false
+    t.datetime "updated_at",              null: false
     t.string   "work_phone"
     t.string   "physician"
     t.string   "referred_by"
@@ -100,41 +100,28 @@ ActiveRecord::Schema.define(version: 20160406132344) do
     t.string   "drink_tea"
     t.string   "drink_cola"
     t.string   "drink_other_caffeine"
-    t.string   "email",                   default: "", null: false
-    t.string   "encrypted_password",      default: "", null: false
-    t.string   "reset_password_token"
-    t.datetime "reset_password_sent_at"
-    t.datetime "remember_created_at"
-    t.integer  "sign_in_count",           default: 0,  null: false
-    t.datetime "current_sign_in_at"
-    t.datetime "last_sign_in_at"
-    t.inet     "current_sign_in_ip"
-    t.inet     "last_sign_in_ip"
   end
-
-  add_index "health_histories", ["email"], name: "index_health_histories_on_email", unique: true, using: :btree
-  add_index "health_histories", ["reset_password_token"], name: "index_health_histories_on_reset_password_token", unique: true, using: :btree
 
   create_table "hospitalizations", force: :cascade do |t|
     t.text     "hospitalization_reason"
     t.string   "year"
-    t.integer  "client_id"
+    t.integer  "health_history_id"
     t.datetime "created_at",             null: false
     t.datetime "updated_at",             null: false
   end
 
-  add_index "hospitalizations", ["client_id"], name: "index_hospitalizations_on_client_id", using: :btree
+  add_index "hospitalizations", ["health_history_id"], name: "index_hospitalizations_on_health_history_id", using: :btree
 
   create_table "medications", force: :cascade do |t|
     t.string   "name"
     t.string   "strength"
     t.string   "frequency"
-    t.integer  "client_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.integer  "health_history_id"
+    t.datetime "created_at",        null: false
+    t.datetime "updated_at",        null: false
   end
 
-  add_index "medications", ["client_id"], name: "index_medications_on_client_id", using: :btree
+  add_index "medications", ["health_history_id"], name: "index_medications_on_health_history_id", using: :btree
 
   create_table "personal_disease_histories", force: :cascade do |t|
     t.text     "heart_disease"
@@ -149,28 +136,35 @@ ActiveRecord::Schema.define(version: 20160406132344) do
     t.text     "neurological_disorders"
     t.text     "substance_abuse"
     t.text     "other"
-    t.integer  "client_id"
+    t.integer  "health_history_id"
     t.datetime "created_at",             null: false
     t.datetime "updated_at",             null: false
   end
 
-  add_index "personal_disease_histories", ["client_id"], name: "index_personal_disease_histories_on_client_id", using: :btree
+  add_index "personal_disease_histories", ["health_history_id"], name: "index_personal_disease_histories_on_health_history_id", using: :btree
 
   create_table "surgeries", force: :cascade do |t|
     t.string   "surgical_procedure"
     t.string   "year"
-    t.integer  "client_id"
+    t.integer  "health_history_id"
     t.datetime "created_at",         null: false
     t.datetime "updated_at",         null: false
   end
 
-  add_index "surgeries", ["client_id"], name: "index_surgeries_on_client_id", using: :btree
+  add_index "surgeries", ["health_history_id"], name: "index_surgeries_on_health_history_id", using: :btree
 
-  add_foreign_key "allergies", "health_histories", column: "client_id", on_delete: :cascade
-  add_foreign_key "complaints", "health_histories", column: "client_id", on_delete: :cascade
-  add_foreign_key "family_disease_histories", "health_histories", column: "client_id", on_delete: :cascade
-  add_foreign_key "hospitalizations", "health_histories", column: "client_id", on_delete: :cascade
-  add_foreign_key "medications", "health_histories", column: "client_id", on_delete: :cascade
-  add_foreign_key "personal_disease_histories", "health_histories", column: "client_id", on_delete: :cascade
-  add_foreign_key "surgeries", "health_histories", column: "client_id", on_delete: :cascade
+  add_foreign_key "allergies", "health_histories", on_delete: :cascade
+  add_foreign_key "allergies", "health_histories", on_delete: :cascade
+  add_foreign_key "complaints", "health_histories", on_delete: :cascade
+  add_foreign_key "complaints", "health_histories", on_delete: :cascade
+  add_foreign_key "family_disease_histories", "health_histories", on_delete: :cascade
+  add_foreign_key "family_disease_histories", "health_histories", on_delete: :cascade
+  add_foreign_key "hospitalizations", "health_histories", on_delete: :cascade
+  add_foreign_key "hospitalizations", "health_histories", on_delete: :cascade
+  add_foreign_key "medications", "health_histories", on_delete: :cascade
+  add_foreign_key "medications", "health_histories", on_delete: :cascade
+  add_foreign_key "personal_disease_histories", "health_histories", on_delete: :cascade
+  add_foreign_key "personal_disease_histories", "health_histories", on_delete: :cascade
+  add_foreign_key "surgeries", "health_histories", on_delete: :cascade
+  add_foreign_key "surgeries", "health_histories", on_delete: :cascade
 end
