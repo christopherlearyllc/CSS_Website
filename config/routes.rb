@@ -1,4 +1,4 @@
 Rails.application.routes.draw do
-  resources :clients
+  resources :health_histories
 
 end

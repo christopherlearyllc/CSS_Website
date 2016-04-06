@@ -1,15 +1,15 @@
-<h1>Update Client Information</h1>
+<h1>Update Health History Information</h1>
 
-<%= form_for :client, url: client_path(@client), method: :patch do |f| %>
-   
-   <% if @client.errors.any? %>
+<%= form_for :health_history, url: health_history_path(@health_history), method: :patch do |f| %>
+
+   <% if @health_history.errors.any? %>
     <div id="error_explanation">
       <h2>
-        <%= pluralize(@client.errors.count, "error") %> prohibited
-        this client from being updated:
+        <%= pluralize(@health_history.errors.count, "error") %> prohibited
+        this health history from being updated:
       </h2>
       <ul>
-        <% @client.errors.full_messages.each do |msg| %>
+        <% @health_history.errors.full_messages.each do |msg| %>
           <li><%= msg %></li>
         <% end %>
       </ul>
@@ -20,7 +20,7 @@
     <%= f.label :first_name %><br>
     <%= f.text_field :first_name %>
   </p>
- 
+
   <p>
     <%= f.label :last_name %><br>
     <%= f.text_field :last_name%>
@@ -50,7 +50,7 @@
     <%= f.label :weight %><br>
     <%= f.text_field :weight %>
   </p>
- 
+
   <p>
     <%= f.label :address %><br>
     <%= f.text_field :address %>

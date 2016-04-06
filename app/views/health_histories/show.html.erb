@@ -1,0 +1,150 @@
+<div class="container show-container">
+  <div class="panel panel-info">
+    <div class="panel-heading">
+      <h3 class="panel-title">Health History Profile</h3>
+    </div>
+    <div class="panel-body client-show">
+      <div class="row">
+        <div class="col-md-12"><legend><%= "#{@health_history.first_name} #{@health_history.middle_initial}. #{@health_history.last_name}" %></div>
+      </div>
+      <h4 class="grey-header">Personal Information</h4>
+      <div class="row">
+        <div class="col-xs-6 col-sm-3 col-md-3 col-lg-3"><p><strong>Gender: </strong><%= @health_history.gender %></p></div>
+        <div class="col-xs-6 col-sm-3 col-md-3 col-lg-3"><p><strong>Date of Birth: </strong><%= @health_history.date_of_birth %></p></div>
+        <div class="col-xs-6 col-sm-3 col-md-3 col-lg-3"><p><strong>Height: </strong><%= @height_feet %> ft. <%= @height_inches %> in.</p></div>
+        <div class="col-xs-6 col-sm-3 col-md-3 col-lg-3"><p><strong>Weight: </strong> <%= @health_history.weight %> lbs.</p></div>
+      </div>
+      <h4 class="grey-header">Contact Information</h4>
+      <div class="row">
+        <div class="col-xs-6 col-sm-4 col-md-4 col-lg-4"><p><strong>Address: </strong><%= @health_history.address %> <%= @health_history.city %>, <%= @health_history.state %> <%= @health_history.zip %></div>
+        <div class="col-xs-6 col-sm-4 col-md-4 col-lg-4"><p><strong>Home Phone: </strong><%= @health_history.home_phone %></div>
+        <div class="col-xs-6 col-sm-4 col-md-4 col-lg-4"><p><strong>Work Phone: </strong><%= @health_history.work_phone %></div>
+      </div>
+      <div class="row">
+        <div class="col-xs-6 col-sm-4 col-md-4 col-lg-4"><p><strong>Physician: </strong><%= @health_history.physician %></div>
+        <div class="col-xs-6 col-sm-4 col-md-4 col-lg-4"><p><strong>Referred By: </strong><%= @health_history.referred_by %></div>
+        <div class="col-xs-6 col-sm-4 col-md-4 col-lg-4"><p><strong>Emergency Contact: </strong><%= @health_history.emergency_contact_name %></div>
+      </div>
+      <div class="row">
+        <div class="col-xs-6 col-sm-4 col-md-4 col-lg-4"><p><strong>E.C. Phone: </strong><%= @health_history.emergency_contact_phone %></div>
+      </div>
+      <h4 class="grey-header">Complaints</h4>
+      <% @health_history.complaints.each_with_index do |complaint, i| %>
+        <div class="row">
+          <div class="col-xs-6 col-sm-4 col-md-4 col-lg-4"><p><span class="number-grey"><%= (i + 1) %>.</span> <strong>Symptom: </strong><%= complaint.symptom %></div>
+          <div class="col-xs-6 col-sm-4 col-md-4 col-lg-4"><p><strong>Date Started: </strong><%= complaint.date_started %></div>
+          <div class="col-xs-6 col-sm-4 col-md-4 col-lg-4"><p><strong>Alleviated By: </strong><%= complaint.alleviated_by%></div>
+        </div>
+        <div class="row">
+          <div class="col-xs-6 col-sm-4 col-md-4 col-lg-4 complaint-padding"><strong>Aggravated By: </strong><%= complaint.aggravated_by%></div>
+          <div class="col-xs-6 col-sm-4 col-md-4 col-lg-4"><p><strong>Diagnosis: </strong><%= complaint.diagnosis %></div>
+          <div class="col-xs-6 col-sm-4 col-md-4 col-lg-4"><p><strong>Inhibited Activity: </strong><%= complaint.inhibited_activity %></div>
+        </div>
+        <div class="row">
+          <div class="col-xs-6 col-sm-4 col-md-4 col-lg-4 complaint-margin complaint-padding"><p><strong>Treatment: </strong><%= complaint.treatment%></div>
+        </div>
+      <% end %>
+      <h4 class="grey-header">Surgeries</h4>
+      <% @health_history.surgeries.each_with_index do |surgery, i| %>
+        <div class="row">
+          <div class="col-xs-6 col-sm-4 col-md-4 col-lg-4"><p><span class="number-grey"><%= (i + 1) %>.</span> <strong>Procedure: </strong><%= surgery.surgical_procedure %></div>
+          <div class="col-xs-6 col-sm-4 col-md-4 col-lg-4"><p><strong>Year: </strong><%= surgery.year %></div>
+        </div>
+      <% end %>
+      <h4 class="grey-header">Hospitalizations</h4>
+      <% @health_history.hospitalizations.each_with_index do |hospitalization, i| %>
+        <div class="row">
+          <div class="col-xs-6 col-sm-4 col-md-4 col-lg-4"><p><span class="number-grey"><%= (i + 1) %>.</span> <strong>Reason: </strong><%= hospitalization.hospitalization_reason %></div>
+          <div class="col-xs-6 col-sm-4 col-md-4 col-lg-4"><p><strong>Year: </strong><%= hospitalization.year %></div>
+        </div>
+      <% end %>
+      <h4 class="grey-header">Medications</h4>
+      <% @health_history.medications.each_with_index do |medication, i| %>
+        <div class="row">
+          <div class="col-xs-6 col-sm-4 col-md-4 col-lg-4"><p><span class="number-grey"><%= (i + 1) %>.</span> <strong>Name: </strong><%= medication.name %></div>
+          <div class="col-xs-6 col-sm-4 col-md-4 col-lg-4"><p><strong>Strength: </strong><%= medication.strength %></div>
+          <div class="col-xs-6 col-sm-4 col-md-4 col-lg-4"><p><strong>Frequency Taken: </strong><%= medication.frequency %></div>
+        </div>
+      <% end %>
+      <h4 class="grey-header">Allergies</h4>
+      <% @health_history.allergies.each_with_index do |allergy, i| %>
+        <div class="row">
+          <div class="col-xs-6 col-sm-4 col-md-4 col-lg-4"><p><span class="number-grey"><%= (i + 1) %>. </span><strong>Allergen: </strong><%= allergy.allergen %></div>
+          <div class="col-xs-6 col-sm-4 col-md-4 col-lg-4"><p><strong>Reaction: </strong><%= allergy.reaction %></div>
+        </div>
+      <% end %>
+      <h4 class="grey-header">Exercise</h4>
+      <div class="row">
+        <div class="col-xs-6 col-sm-4 col-md-4 col-lg-4"><p><strong>Exercise Type: </strong><%= @health_history.exercise_type %></div>
+        <div class="col-xs-6 col-sm-4 col-md-4 col-lg-4"><p><strong>Exercise Frequency: </strong><%= @health_history.exercise_frequency %></div>
+      </div>
+      <h4 class="grey-header">Lifestyle</h4>
+      <div class="row">
+        <div class="col-xs-6 col-sm-4 col-md-4 col-lg-4"><p><strong>Breakfast: </strong><%= @health_history.breakfast %></div>
+        <div class="col-xs-6 col-sm-4 col-md-4 col-lg-4"><p><strong>Lunch: </strong><%= @health_history.lunch %></div>
+        <div class="col-xs-6 col-sm-4 col-md-4 col-lg-4"><p><strong>Dinner: </strong><%= @health_history.breakfast %></div>
+      </div>
+      <div class="row">
+        <div class="col-xs-6 col-sm-4 col-md-4 col-lg-4"><p><strong>Snacks: </strong><%= @health_history.snack %></div>
+        <div class="col-xs-6 col-sm-4 col-md-4 col-lg-4"><p><strong>Coffee: </strong><%= @health_history.drink_coffee %></div>
+        <div class="col-xs-6 col-sm-4 col-md-4 col-lg-4"><p><strong>Tea: </strong><%= @health_history.drink_tea %></div>
+      </div>
+      <div class="row">
+        <div class="col-xs-6 col-sm-4 col-md-4 col-lg-4"><p><strong>Cola: </strong><%= @health_history.drink_cola %></div>
+        <div class="col-xs-6 col-sm-4 col-md-4 col-lg-4"><p><strong>Other Caffeine: </strong><%= @health_history.drink_other_caffeine %></div>
+        <div class="col-xs-6 col-sm-4 col-md-4 col-lg-4"><p><strong>Caffeine Cups Per Day: </strong><%= @health_history.caffeine_cups %></div>
+      </div>
+      <div class="row">
+        <div class="col-xs-6 col-sm-4 col-md-4 col-lg-4"><p><strong>Drink Alcohol: </strong><%= @health_history.alcohol_consumption %></div>
+        <div class="col-xs-6 col-sm-4 col-md-4 col-lg-4"><p><strong>Alcohol Type: </strong><%= @health_history.alcohol_type %></div>
+        <div class="col-xs-6 col-sm-4 col-md-4 col-lg-4"><p><strong>Alcohol Drinks per Week: </strong><%= @health_history.drinks_per_week %></div>
+      </div>
+      <h4 class="grey-header">Smoking</h4>
+      <div class="row">
+        <div class="col-xs-6 col-sm-6 col-md-3 col-lg-3"><p><strong>Smoker: </strong><%= @health_history.smoking_habit %></div>
+        <div class="col-xs-6 col-sm-6 col-md-3 col-lg-3"><p><strong>Smoking Substance: </strong><%= @health_history.smoking_substance %></div>
+        <div class="col-xs-6 col-sm-6 col-md-3 col-lg-3"><p><strong>Years a Smoker: </strong><%= @health_history.years_smoker %></div>
+        <div class="col-xs-6 col-sm-6 col-md-3 col-lg-3"><p><strong>Year Quit: </strong><%= @health_history.year_quit %></div>
+      </div>
+      <h4 class="grey-header">Personal Disease History</h4>
+      <div class="row">
+        <div class="col-xs-6 col-sm-6 col-md-3 col-lg-3"><p><strong>Heart Disease: </strong><%= @health_history.personal_disease_history.heart_disease %></p></div>
+        <div class="col-xs-6 col-sm-6 col-md-3 col-lg-3"><p><strong>Cancer: </strong><%= @health_history.personal_disease_history.cancer %></p></div>
+        <div class="col-xs-6 col-sm-6 col-md-3 col-lg-3"><p><strong>Diabetes: </strong><%= @health_history.personal_disease_history.diabetes %></p></div>
+        <div class="col-xs-6 col-sm-6 col-md-3 col-lg-3"><p><strong>Hypertension: </strong> <%= @health_history.personal_disease_history.hypertension %></p></div>
+      </div>
+      <div class="row">
+        <div class="col-xs-6 col-sm-6 col-md-3 col-lg-3"><p><strong>Thyroid Disorder: </strong><%= @health_history.personal_disease_history.thyroid_disorder %></p></div>
+        <div class="col-xs-6 col-sm-6 col-md-3 col-lg-3"><p><strong>Hepatitis: </strong><%= @health_history.personal_disease_history.hepatitis %></p></div>
+        <div class="col-xs-6 col-sm-6 col-md-3 col-lg-3"><p><strong>Asthma/Allergies: </strong><%= @health_history.personal_disease_history.asthma_allergies %></p></div>
+        <div class="col-xs-6 col-sm-6 col-md-3 col-lg-3"><p><strong>Seizures: </strong> <%= @health_history.personal_disease_history.seizures %></p></div>
+      </div>
+      <div class="row">
+        <div class="col-xs-6 col-sm-6 col-md-3 col-lg-3"><p><strong>Stroke: </strong><%= @health_history.personal_disease_history.stroke %></p></div>
+        <div class="col-xs-6 col-sm-6 col-md-3 col-lg-3"><p><strong>Neurological Disorders: </strong><%= @health_history.personal_disease_history.neurological_disorders %></p></div>
+        <div class="col-xs-6 col-sm-6 col-md-3 col-lg-3"><p><strong>Substance Abuse: </strong><%= @health_history.personal_disease_history.substance_abuse %></p></div>
+        <div class="col-xs-6 col-sm-6 col-md-3 col-lg-3"><p><strong>Other: </strong> <%= @health_history.personal_disease_history.other %></p></div>
+      </div>
+      <h4 class="grey-header">Family Disease History</h4>
+      <div class="row">
+        <div class="col-xs-6 col-sm-6 col-md-3 col-lg-3"><p><strong>Heart Disease: </strong><%= @health_history.family_disease_history.heart_disease %></p></div>
+        <div class="col-xs-6 col-sm-6 col-md-3 col-lg-3"><p><strong>Cancer: </strong><%= @health_history.family_disease_history.cancer %></p></div>
+        <div class="col-xs-6 col-sm-6 col-md-3 col-lg-3"><p><strong>Diabetes: </strong><%= @health_history.family_disease_history.diabetes %></p></div>
+        <div class="col-xs-6 col-sm-6 col-md-3 col-lg-3"><p><strong>Hypertension: </strong> <%= @health_history.family_disease_history.hypertension %></p></div>
+      </div>
+      <div class="row">
+        <div class="col-xs-6 col-sm-6 col-md-3 col-lg-3"><p><strong>Thyroid Disorder: </strong><%= @health_history.family_disease_history.thyroid_disorder %></p></div>
+        <div class="col-xs-6 col-sm-6 col-md-3 col-lg-3"><p><strong>Hepatitis: </strong><%= @health_history.family_disease_history.hepatitis %></p></div>
+        <div class="col-xs-6 col-sm-6 col-md-3 col-lg-3"><p><strong>Asthma/Allergies: </strong><%= @health_history.family_disease_history.asthma_allergies %></p></div>
+        <div class="col-xs-6 col-sm-6 col-md-3 col-lg-3"><p><strong>Seizures: </strong> <%= @health_history.family_disease_history.seizures %></p></div>
+      </div>
+      <div class="row">
+        <div class="col-xs-6 col-sm-6 col-md-3 col-lg-3"><p><strong>Stroke: </strong><%= @health_history.family_disease_history.stroke %></p></div>
+        <div class="col-xs-6 col-sm-6 col-md-3 col-lg-3"><p><strong>Neurological Disorders: </strong><%= @health_history.family_disease_history.neurological_disorders %></p></div>
+        <div class="col-xs-6 col-sm-6 col-md-3 col-lg-3"><p><strong>Substance Abuse: </strong><%= @health_history.family_disease_history.substance_abuse %></p></div>
+        <div class="col-xs-6 col-sm-6 col-md-3 col-lg-3"><p><strong>Other: </strong> <%= @health_history.family_disease_history.other %></p></div>
+      </div>
+    </div>
+  </div>
+  <%= link_to 'Edit Client Info', edit_health_history_path(@health_history), class: "btn btn-success" %>
+</div>

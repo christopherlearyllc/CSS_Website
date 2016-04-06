@@ -1,14 +1,14 @@
-<%= form_for (@client)  do |f| %>
-   
-  <% if @client.errors.any? %>
+<%= form_for (@health_history)  do |f| %>
+
+  <% if @health_history.errors.any? %>
   <div class="alert alert-dismissible alert-danger">
     <button type="button" class="close" data-dismiss="alert">×</button>
     <h2>
-      <%= pluralize(@client.errors.count, "error") %> prohibited
-      this client from being saved:
+      <%= pluralize(@health_history.errors.count, "error") %> prohibited
+      this health_history from being saved:
     </h2>
     <ol>
-      <% @client.errors.full_messages.each do |msg| %>
+      <% @health_history.errors.full_messages.each do |msg| %>
         <li><%= msg %></li>
       <% end %>
     </ol>
@@ -53,7 +53,7 @@
           <div class="stacked-inputs">
             <div class="form-group col-sm-12 col-md-6 col-lg-6">
               <%= f.label :date_of_birth, class: "label-top"   %>
-              <%= f.date_select :date_of_birth, :order => [:year, :month, :day], :start_year => 1940,  
+              <%= f.date_select :date_of_birth, :order => [:year, :month, :day], :start_year => 1940,
     :end_year => 2013, :prompt => { :day => 'Day', :month => 'Month', :year => 'Year' }, :with_css_classes => true, :html=>{:class => "form-control"} %>
             </div>
           </div>
@@ -187,7 +187,7 @@
             <%= f.label :drink_cola, "Drink cola?" %>
             <%= f.select(:drink_cola, options_for_select([['Yes'], ['No']]), {:prompt => "Select"}, { class: 'form-control' })%>
           </div>
-        
+
           <div class="form-group col-sm-12 col-md-2 col-lg-2">
             <%= f.label :drink_other_caffeine, "Other Caffeine?" %>
             <%= f.select(:drink_other_caffeine, options_for_select([['Yes'], ['No']]), {:prompt => "Select"}, { class: 'form-control' })%>
@@ -367,14 +367,6 @@
   </div>
   </div>
   <div class="remove-nested button-center">
-    <%= f.submit @client.new_record? ? "Submit" : "Update", class: "btn btn-primary"%>
+    <%= f.submit @health_history.new_record? ? "Submit" : "Update", class: "btn btn-primary"%>
   </div>
 <% end %>
-
-
-
-        
-
-  
-            
-              

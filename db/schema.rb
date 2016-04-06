@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160403155107) do
+ActiveRecord::Schema.define(version: 20160406132344) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -25,47 +25,6 @@ ActiveRecord::Schema.define(version: 20160403155107) do
   end
 
   add_index "allergies", ["client_id"], name: "index_allergies_on_client_id", using: :btree
-
-  create_table "clients", force: :cascade do |t|
-    t.string   "first_name"
-    t.string   "last_name"
-    t.string   "middle_initial"
-    t.string   "gender"
-    t.date     "date_of_birth"
-    t.integer  "height"
-    t.integer  "weight"
-    t.string   "address"
-    t.string   "home_phone"
-    t.datetime "created_at",              null: false
-    t.datetime "updated_at",              null: false
-    t.string   "work_phone"
-    t.string   "physician"
-    t.string   "referred_by"
-    t.string   "emergency_contact_name"
-    t.string   "emergency_contact_phone"
-    t.string   "exercise_frequency"
-    t.string   "exercise_type"
-    t.text     "breakfast"
-    t.text     "lunch"
-    t.text     "dinner"
-    t.text     "snack"
-    t.integer  "caffeine_cups"
-    t.string   "alcohol_type"
-    t.integer  "drinks_per_week"
-    t.string   "smoking_substance"
-    t.integer  "years_smoker"
-    t.string   "year_quit"
-    t.string   "alcohol_consumption"
-    t.string   "alcohol_abuse"
-    t.string   "smoking_habit"
-    t.string   "city"
-    t.string   "state"
-    t.string   "zip"
-    t.string   "drink_coffee"
-    t.string   "drink_tea"
-    t.string   "drink_cola"
-    t.string   "drink_other_caffeine"
-  end
 
   create_table "complaints", force: :cascade do |t|
     t.string   "symptom"
@@ -101,6 +60,60 @@ ActiveRecord::Schema.define(version: 20160403155107) do
   end
 
   add_index "family_disease_histories", ["client_id"], name: "index_family_disease_histories_on_client_id", using: :btree
+
+  create_table "health_histories", force: :cascade do |t|
+    t.string   "first_name"
+    t.string   "last_name"
+    t.string   "middle_initial"
+    t.string   "gender"
+    t.date     "date_of_birth"
+    t.integer  "height"
+    t.integer  "weight"
+    t.string   "address"
+    t.string   "home_phone"
+    t.datetime "created_at",                           null: false
+    t.datetime "updated_at",                           null: false
+    t.string   "work_phone"
+    t.string   "physician"
+    t.string   "referred_by"
+    t.string   "emergency_contact_name"
+    t.string   "emergency_contact_phone"
+    t.string   "exercise_frequency"
+    t.string   "exercise_type"
+    t.text     "breakfast"
+    t.text     "lunch"
+    t.text     "dinner"
+    t.text     "snack"
+    t.integer  "caffeine_cups"
+    t.string   "alcohol_type"
+    t.integer  "drinks_per_week"
+    t.string   "smoking_substance"
+    t.integer  "years_smoker"
+    t.string   "year_quit"
+    t.string   "alcohol_consumption"
+    t.string   "alcohol_abuse"
+    t.string   "smoking_habit"
+    t.string   "city"
+    t.string   "state"
+    t.string   "zip"
+    t.string   "drink_coffee"
+    t.string   "drink_tea"
+    t.string   "drink_cola"
+    t.string   "drink_other_caffeine"
+    t.string   "email",                   default: "", null: false
+    t.string   "encrypted_password",      default: "", null: false
+    t.string   "reset_password_token"
+    t.datetime "reset_password_sent_at"
+    t.datetime "remember_created_at"
+    t.integer  "sign_in_count",           default: 0,  null: false
+    t.datetime "current_sign_in_at"
+    t.datetime "last_sign_in_at"
+    t.inet     "current_sign_in_ip"
+    t.inet     "last_sign_in_ip"
+  end
+
+  add_index "health_histories", ["email"], name: "index_health_histories_on_email", unique: true, using: :btree
+  add_index "health_histories", ["reset_password_token"], name: "index_health_histories_on_reset_password_token", unique: true, using: :btree
 
   create_table "hospitalizations", force: :cascade do |t|
     t.text     "hospitalization_reason"
@@ -153,11 +166,11 @@ ActiveRecord::Schema.define(version: 20160403155107) do
 
   add_index "surgeries", ["client_id"], name: "index_surgeries_on_client_id", using: :btree
 
-  add_foreign_key "allergies", "clients", on_delete: :cascade
-  add_foreign_key "complaints", "clients", on_delete: :cascade
-  add_foreign_key "family_disease_histories", "clients", on_delete: :cascade
-  add_foreign_key "hospitalizations", "clients", on_delete: :cascade
-  add_foreign_key "medications", "clients", on_delete: :cascade
-  add_foreign_key "personal_disease_histories", "clients", on_delete: :cascade
-  add_foreign_key "surgeries", "clients", on_delete: :cascade
+  add_foreign_key "allergies", "health_histories", column: "client_id", on_delete: :cascade
+  add_foreign_key "complaints", "health_histories", column: "client_id", on_delete: :cascade
+  add_foreign_key "family_disease_histories", "health_histories", column: "client_id", on_delete: :cascade
+  add_foreign_key "hospitalizations", "health_histories", column: "client_id", on_delete: :cascade
+  add_foreign_key "medications", "health_histories", column: "client_id", on_delete: :cascade
+  add_foreign_key "personal_disease_histories", "health_histories", column: "client_id", on_delete: :cascade
+  add_foreign_key "surgeries", "health_histories", column: "client_id", on_delete: :cascade
 end

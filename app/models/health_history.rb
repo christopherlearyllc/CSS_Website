@@ -1,4 +1,4 @@
-class Client < ActiveRecord::Base
+class HealthHistory < ActiveRecord::Base
   has_many :complaints, :dependent => :destroy
   has_one :personal_disease_history, :dependent => :destroy
   has_one :family_disease_history, :dependent => :destroy
@@ -6,7 +6,7 @@ class Client < ActiveRecord::Base
   has_many :hospitalizations, :dependent => :destroy
   has_many :medications, :dependent => :destroy
   has_many :allergies, :dependent => :destroy
-  
+
   validates :first_name, :last_name, :height, :weight, :address, :home_phone, :alcohol_consumption, :smoking_habit, presence: true
   validates :middle_initial, length: { maximum: 1 }
 

@@ -1,0 +1,16 @@
+<table class="table index-table">
+  <thead>
+    <tr class="info">
+      <td>Name</td>
+      <td>Client ID</td>
+      <td>Edit Client</td>
+    </tr>
+  </thead>
+  <% @health_histories.each do |health_history| %>
+  <tr class="<%= cycle('active', '') -%>">
+    <td><%= link_to "#{health_history.first_name} #{health_history.middle_initial} #{health_history.last_name}", health_history_path(health_history) %></td>
+    <td><%= health_history.id %></td>
+    <td><%= link_to 'Edit Info', edit_health_history_path(health_history) %></td>
+  </tr>
+  <% end %>
+</table>
