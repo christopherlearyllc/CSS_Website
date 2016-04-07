@@ -3,6 +3,11 @@ class HealthHistoriesController < ApplicationController
 
   def index
     @health_histories = HealthHistory.all
+    unless current_user.admin
+      flash[:alert] = "Sorry, you do not have access to that page."
+      redirect_to root_path
+      return
+    end
   end
 
   def show

@@ -2,6 +2,7 @@
 @import "bootswatch/lumen/variables";
 @import "bootstrap";
 @import "bootswatch/lumen/bootswatch";
+@import "font-awesome";
 
 @media (max-width: 768px) {
   .disease-nested input {
@@ -10,6 +11,25 @@
 }
 
 @media (min-width: 769px) {
+
+  .navbar-default .navbar-nav > li > a {
+    color: #333;
+    font-size: 16px;
+  }
+
+  .navbar-default .navbar-nav > li > a:hover {
+    color: #FF7D63;
+  }
+
+  ul.nav.navbar-nav.navbar-right {
+    margin-top: 9px;
+  }
+
+  .desktop-header-padding {
+    padding-left: 25px;
+    padding-right: 25px;
+  }
+
   .nested-fields {
     margin-bottom: 20px;
   }
@@ -193,4 +213,71 @@
   font-weight: 700;
   font-size: 13px;
   display: block;
+}
+
+.navbar-default {
+  background-color: #fff;
+  height: 75px;
+}
+
+#biz-name {
+  color: #444444;
+  font-size: 23px;
+  font-weight: 600;
+  font-family: sans-serif;
+  display: inline;
+  vertical-align: 9px;
+}
+
+.fa-leaf {
+  color: #FF7D63;
+  font-size: 40px;
+  margin-right: 10px;
+}
+
+.fa-pagelines, .fa-heart, .fa-sun-o {
+  font-size: 80px;
+  vertical-align: middle;
+}
+
+.fa-pagelines {
+  color: #4ECE97;
+}
+
+.fa-heart {
+  color: #F47B64;
+}
+
+.fa-sun-o {
+  color: #FFD17B;
+}
+
+.center-icon {
+  text-align: center;
+}
+
+.center-icon h4 {
+  color: #555;
+  font-weight: bold;
+}
+
+.center-icon p {
+  font-size: 16px;
+  width: 75%;
+  text-align: center;
+  width: 75%;
+  margin: 0 auto;
+}
+
+.appointment-button {
+  background-color: #179DD8;
+  color: white;
+  letter-spacing: 1px;
+  font-size: 17px;
+  font-family: 'Lato',sans-serif;
+  font-weight: 400;
+}
+
+.appointment-button:hover {
+  color: #d8d8d8;
 }
