@@ -270,14 +270,61 @@
 }
 
 .appointment-button {
-  background-color: #179DD8;
+  background-color: #F47B64;
   color: white;
   letter-spacing: 1px;
   font-size: 17px;
-  font-family: 'Lato',sans-serif;
-  font-weight: 400;
+  font-family: 'Source Sans Pro', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-weight: 600;
+}
+
+.hero-text {
+  margin: 50px 0 60px 0;
+  text-align: center;
+}
+
+.hero-text h2 {
+  font-weight: 700;
+  color: #444444;
+  font-size: 35px;
+  margin-bottom: 40px;
 }
 
 .appointment-button:hover {
   color: #d8d8d8;
+}
+
+.jumbotron-hero {
+  background-color: #119ee0;
+  color: #fff;
+  text-align: center;
+  margin-bottom: 60px;
+  border: none;
+  padding-top: 35px;
+  padding-bottom: 35px;
+}
+
+.jumbotron-hero h3 {
+  color: #fff;
+  font-weight: 700;
+  font-size: 28px;
+}
+
+.pitch-text p {
+  text-align: center;
+  padding: 40px 120px 10px 120px;
+  font-weight: 500;
+  color: #CFECF9;
+}
+
+.footer {
+  background-color: #F8F8F8;
+  height: 120px;
+  margin-top: 60px;
+}
+
+.footer h4 {
+  color: #555555;
+  text-align: center;
+  padding-top: 80px;
 }
