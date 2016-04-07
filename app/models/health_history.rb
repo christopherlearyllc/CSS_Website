@@ -6,6 +6,7 @@ class HealthHistory < ActiveRecord::Base
   has_many :hospitalizations, :dependent => :destroy
   has_many :medications, :dependent => :destroy
   has_many :allergies, :dependent => :destroy
+  belongs_to :user
 
   validates :first_name, :last_name, :height, :weight, :address, :home_phone, :alcohol_consumption, :smoking_habit, presence: true
   validates :middle_initial, length: { maximum: 1 }

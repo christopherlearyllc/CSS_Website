@@ -1,4 +1,5 @@
 class HealthHistoriesController < ApplicationController
+  before_action :authenticate_user!
 
   def index
     @health_histories = HealthHistory.all
@@ -6,6 +7,11 @@ class HealthHistoriesController < ApplicationController
 
   def show
     @health_history = HealthHistory.find(params[:id])
+    unless current_user.id == @health_history.user_id || current_user.admin
+      flash[:alert] = "Sorry, you do not have access to that page."
+      redirect_to root_path
+      return
+    end
     @height_feet = @health_history.height_feet(@health_history.height)
     @height_inches = @health_history.height_inches(@health_history.height)
   end
@@ -23,6 +29,11 @@ class HealthHistoriesController < ApplicationController
 
   def edit
     @health_history = HealthHistory.find(params[:id])
+    unless current_user.id == @health_history.user_id || current_user.admin
+      flash[:alert] = "Sorry, you do not have access to that page."
+      redirect_to root_path
+      return
+    end
   end
 
   def create
