@@ -1,5 +1,12 @@
 class PagesController < ApplicationController
-  def show
-    render template: "pages/#{params[:page]}"
+  before_action :authenticate_user!, only: [:welcome]
+
+  def home
+
   end
+
+  def welcome
+    
+  end
+
 end

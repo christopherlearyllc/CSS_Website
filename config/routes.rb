@@ -2,7 +2,8 @@ Rails.application.routes.draw do
   devise_for :users
   resources :health_histories
 
-  root to: "pages#show", page: "home"
+  root 'pages#home'
 
-  get "/pages/:page" => "pages#show"
+  get '/pages/home'
+  get '/pages/welcome'
 end
