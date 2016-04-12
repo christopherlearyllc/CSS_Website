@@ -49,8 +49,14 @@
   .center-icon {
     margin-top: 30px;
   }
+
   .disease-nested input {
     margin: 15px 0;
+  }
+
+  .form-group {
+    margin-left: 0 !important;
+    margin-right: 0 !important;
   }
 }
 
@@ -161,25 +167,10 @@
     background-color: #F8F8F8;
   }
 
-  .devise-header {
-    font-family: sans-serif;
-    color: #444444;
-    font-weight: 600;
-    text-align: center;
-    font-size: 28px;
-    margin-bottom: 30px;
-  }
 
   .login-link {
     margin-left: -15px;
     font-size: 16px;
-  }
-
-  .devise-label {
-    color: #444444;
-    text-transform: uppercase;
-    font-weight: 700;
-    font-size: 14px;
   }
 }
 
@@ -408,4 +399,20 @@
   color: #555555;
   text-align: center;
   padding-top: 80px;
+}
+
+.devise-label {
+  color: #444444;
+  text-transform: uppercase;
+  font-weight: 700;
+  font-size: 14px;
+}
+
+.devise-header {
+  font-family: sans-serif;
+  color: #444444;
+  font-weight: 600;
+  text-align: center;
+  font-size: 28px;
+  margin-bottom: 30px;
 }
