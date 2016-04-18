@@ -167,11 +167,22 @@
     background-color: #F8F8F8;
   }
 
-
   .login-link {
     margin-left: -15px;
     font-size: 16px;
   }
+
+  .welcome-text {
+    font-weight: 700;
+    color: #444444;
+    font-size: 30px;
+    margin-bottom: 40px;
+  }
+
+  .min-height-footer {
+    min-height: 800px;
+  }
+
 }
 
 @media (min-width: 768px) and (max-width: 775px) {
@@ -415,4 +426,9 @@
   text-align: center;
   font-size: 28px;
   margin-bottom: 30px;
+}
+
+.alert {
+  width: 79%;
+  margin: 20px auto;
 }
