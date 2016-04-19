@@ -6,4 +6,8 @@ class User < ActiveRecord::Base
 
   has_one :health_history
 
+  validates_with InvitationValidator
+
+  attr_accessor :invite
 end
+

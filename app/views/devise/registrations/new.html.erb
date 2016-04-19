@@ -8,6 +8,10 @@
       <%= f.email_field :email, autofocus: true, class: "form-control" %>
     </div>
     <div class="form-group">
+      <%= f.label :invite, "Invitation Code", class: "devise-label" %>
+      <%= f.text_field :invite, placeholder: "Input invitation code from Laura", class: "form-control" %>
+    </div>
+    <div class="form-group">
       <%= f.label :password, class: "devise-label" %>
       <% if @minimum_password_length %>
       <em class="devise-label">(<%= @minimum_password_length %> characters minimum)</em>

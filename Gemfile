@@ -22,7 +22,8 @@ gem 'coffee-rails', '~> 4.1.0'
 # gem 'therubyracer', platforms: :ruby
 #Devise
 gem 'devise'
-
+#Figaro for secure storage of sensitive keys, passwords, etc.
+gem 'figaro'
 # Cocoon gem for dynamic nested forms
 gem "cocoon", '~> 1.2.8'
 

@@ -432,3 +432,28 @@
   width: 79%;
   margin: 20px auto;
 }
+
+#error_explanation {
+  background-color: #FF4136;
+  border-radius: 4px;
+  padding: 5px;
+  margin-bottom: 20px;
+}
+
+#error_explanation h2 {
+  text-align: center;
+  color: #fff;
+  font-size: 23px;
+  text-transform: capitalize;
+}
+
+#error_explanation ul {
+  padding-left: 60px;
+}
+
+#error_explanation li {
+  color: #fff;
+  text-transform: uppercase;
+  font-size: 16px;
+  font-weight: 700;
+}
