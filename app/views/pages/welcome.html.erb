@@ -1,13 +1,13 @@
-<div class="container">
-  <div class="jumbotron">
+<div class="container min-height-footer">
+  <div class="jumbotron jumbotron-welcome">
     <% if current_user.health_history %>
       <h2 class="welcome-text">Welcome! To edit or view your Health History form </br >please click one of the buttons below: </h2>
       <%= link_to 'Edit Info', edit_health_history_path(current_user), class: "btn btn-primary" %>
       <%= link_to 'View Info', health_history_path(current_user), class: "btn btn-success" %>
 
     <% else %>
-      <h2 class="welcome-text">Welcome! Fill out a Health History form </br >by clicking on the link below:</h2>
-      <%= link_to 'Fill out Health History Form', new_health_history_path, class: "btn btn-primary"  %>
+      <h2 class="welcome-text">Welcome! Click the button below to fill out the Health History Form:</h2>
+      <%= link_to 'Start Health History Form', new_health_history_path, class: "btn btn-primary"  %>
     <% end %>
   </div>
 </div>
