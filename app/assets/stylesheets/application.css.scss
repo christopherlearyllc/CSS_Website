@@ -509,3 +509,52 @@
 .index-table a:hover {
   text-decoration: underline !important;
 }
+
+.modal-appointment-header {
+  border-bottom: none;
+  text-align: center;
+  background-color: #119EE0;
+}
+
+.modal-title {
+  font-family: sans-serif;
+  font-weight: 600;
+  color: #fff;
+}
+
+.modal-appointment-body {
+  text-align: center;
+  background-color: #E7E7E7;
+}
+
+.modal-appointment-body h2 {
+  color: #444444;
+  font-weight: 600;
+}
+
+.modal-appointment-body a {
+  color: #F47B64;
+}
+
+.modal-appointment-body a:hover {
+  color: #4ECE97;
+  text-decoration: underline;
+}
+
+.modal-appointment-footer {
+  border-top: none;
+  background-color: #E7E7E7;
+}
+
+.appointment-modal-button {
+  background-color: #4ECE97;
+  color: #fff;
+}
+
+.caret-nav {
+  padding-left: 1px !important;
+}
+
+.log-out-nav {
+  padding-right: 1px !important;
+}

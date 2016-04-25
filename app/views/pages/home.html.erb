@@ -2,7 +2,25 @@
   <div class="row">
     <div class="col-xs-12	col-sm-12	col-md-12	col-lg-12 hero-text">
       <h2>Hi, I'm Laura.<br />I'm an Acupuncturist and Chinese Herbal Therapist</h2>
-      <p><a class="btn btn-lg appointment-button" href="#" role="button">Make an Appointment</a></p>
+      <p><a class="btn btn-lg appointment-button" href="#" role="button" data-toggle="modal" data-target="#contactModal">Make an Appointment</a></p>
+    </div>
+  </div>
+</div>
+<!-- Modal -->
+<div class="modal fade" id="contactModal" tabindex="-1" role="dialog" aria-labelledby="contactModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header modal-appointment-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h3 class="modal-title" id="contactModalLabel">Make an Appointment Today!</h3>
+      </div>
+      <div class="modal-body modal-appointment-body">
+      <h2>Please call<a href="tel:8788675309"> 878-867-5309</h2></a>
+      <h2>to schedule an appointment.</h2>
+      </div>
+      <div class="modal-footer modal-appointment-footer">
+        <button type="button" class="btn appointment-modal-button" data-dismiss="modal">Close</button>
+      </div>
     </div>
   </div>
 </div>
