@@ -89,6 +89,14 @@
   .min-height-footer {
     min-height: 550px;
   }
+
+  .modal-title {
+    font-size: 20px;
+  }
+
+  .modal-appointment-body h2 {
+    font-size: 24px;
+  }
 }
 
 @media (min-width: 769px) {
@@ -245,7 +253,6 @@
   #client_alcohol_type {
     width: 148px;
   }
-
 }
 
 @media (min-width: 768px) and (max-width: 884px) {
