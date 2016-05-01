@@ -48,7 +48,7 @@
           </div>
           <div class="form-group col-sm-12 col-md-2 col-lg-2">
             <%= f.label :weight, "Gender" %>
-            <%= f.select(:gender, options_for_select([['Male'], ['Female']]), {:prompt => "Select"}, { class: 'form-control' })%>
+            <%= f.select(:gender, options_for_select([['Male'], ['Female'], ['Identify Male'], ['Identify Female'], ['Transitioning']]), {:prompt => "Select"}, { class: 'form-control' })%>
           </div>
           <div class="stacked-inputs">
             <div class="form-group col-sm-12 col-md-6 col-lg-6">
@@ -63,7 +63,7 @@
         <div class="row">
           <div class="form-group col-sm-12 col-md-3 col-lg-3">
             <%= f.label :address %>
-            <%= f.text_field :address, class: "form-control" %>
+            <%= f.text_field :address, class: "form-control", placeholder: "Street and Unit or Apt. number" %>
           </div>
           <div class="form-group col-sm-12 col-md-3 col-lg-3">
             <%= f.label :city %>
@@ -107,7 +107,7 @@
           </div>
         </div>
       </div>
-      <div class="form-blocks" id="complaints-form"><legend>Complaints</legend>
+      <div class="form-blocks" id="complaints-form"><legend>Complaints <span class="legend-subtext">(Please be thorough. Click the green button to add more complaints.)</span></legend>
         <%= f.fields_for :complaints do |complaint| %>
           <%= render 'complaint_fields', :f => complaint %>
         <% end %>
@@ -149,7 +149,7 @@
           </div>
         </div>
       </div>
-      <div class="form-blocks"><legend>Diet</legend>
+      <div class="form-blocks"><legend>Diet <span class="legend-subtext">(List typical daily diet.)</span></legend>
         <div class="row">
           <div class="form-group col-sm-12 col-md-6 col-lg-6">
             <%= f.label :breakfast %>
@@ -173,7 +173,7 @@
           </div>
         </div>
       </div>
-      <div class="form-blocks"><legend>Caffeine</legend>
+      <div class="form-blocks"><legend>Caffeine <span class="legend-subtext">(*8 oz. = 1 cup/1 shot = 1 cup) </span></legend>
         <div class="row">
           <div class="form-group col-sm-12 col-md-2 col-lg-2">
             <%= f.label :drink_coffee, "Drink coffee?" %>
@@ -181,7 +181,7 @@
           </div>
           <div class="form-group col-sm-12 col-md-2 col-lg-2">
             <%= f.label :drink_tea, "Drink tea?" %>
-            <%= f.select(:drink_tea, options_for_select([['Yes'], ['No']]), {:prompt => "Select"}, { class: 'form-control' })%>
+            <%= f.select(:drink_tea, options_for_select([['Yes-Black or Green'], ['Yes-Herbal only'], ['No']]), {:prompt => "Select"}, { class: 'form-control' })%>
           </div>
           <div class="form-group col-sm-12 col-md-2 col-lg-2">
             <%= f.label :drink_cola, "Drink cola?" %>
@@ -193,12 +193,12 @@
             <%= f.select(:drink_other_caffeine, options_for_select([['Yes'], ['No']]), {:prompt => "Select"}, { class: 'form-control' })%>
           </div>
           <div class="form-group col-sm-12 col-md-2 col-lg-2">
-            <%= f.label :caffeine_cups, "Cups per Day:" %>
+            <%= f.label :caffeine_cups, "Cups per Day*:" %>
             <%= f.select(:caffeine_cups, options_for_select(0...11), {:prompt => "Cups per Day" }, { class: 'form-control' }) %>
           </div>
         </div>
       </div>
-      <div class="form-blocks"><legend>Alcohol</legend>
+      <div class="form-blocks"><legend>Alcohol <span class="legend-subtext">(*One drink is 12 oz. of beer, 5 oz. of wine, or 1 oz. shot)</span></legend>
         <div class="row">
           <div class="form-group col-sm-12 col-md-3 col-lg-3">
             <%= f.label :alcohol_consumption, "Drink Alcohol?" %>
@@ -209,16 +209,16 @@
             <%= f.text_field :alcohol_type, class: "form-control" %>
           </div>
           <div class="form-group col-sm-12 col-md-3 col-lg-3">
-            <%= f.label :drinks_per_week, "Drinks per Week" %>
+            <%= f.label :drinks_per_week, "Drinks per Week*" %>
             <%= f.select(:drinks_per_week, options_for_select(0...36), {:prompt => "Select"}, { class: 'form-control' })%>
           </div>
           <div class="form-group col-sm-12 col-md-3 col-lg-3">
-            <%= f.label :alcohol_abuse, "Drinking a concern?" %>
+            <%= f.label :alcohol_abuse, "Is your drinking a concern?" %>
             <%= f.select(:alcohol_abuse, options_for_select([['Yes'], ['No']]), {:prompt => "Select"}, { class: 'form-control' })%>
           </div>
         </div>
       </div>
-      <div class="form-blocks"><legend>Smoking</legend>
+      <div class="form-blocks"><legend>Smoking/Smoking History</legend>
         <div class="row">
           <div class="form-group col-sm-12 col-md-3 col-lg-3">
             <%= f.label :smoking_habit, "Do you smoke?" %>
@@ -240,7 +240,7 @@
           </div>
         </div>
       </div>
-      <div class="form-blocks"><legend>Personal Disease History <span class="legend-subtext">(Please include dates. Type "none" if not applicable.)</span></legend>
+      <div class="form-blocks"><legend>Personal Disease History <span class="legend-subtext">(Please include dates and relevant information. Enter "none" if not applicable.)</span></legend>
         <%= f.fields_for :personal_disease_history do |personal_disease| %>
           <div class="form-group disease-nested">
             <div class="stacked-inputs row">
@@ -302,7 +302,7 @@
           </div>
         <% end %>
       </div>
-      <div class="form-blocks"><legend>Family Disease History <span class="legend-subtext">(Please include dates. Type "none" if not applicable.)</span></legend>
+      <div class="form-blocks"><legend>Family Disease History <span class="legend-subtext">(Please identify relation and dates if known. Enter "none" if not applicable.)</span></legend>
         <%= f.fields_for :family_disease_history do |family_disease| %>
           <div class="form-group disease-nested">
             <div class="stacked-inputs row">
