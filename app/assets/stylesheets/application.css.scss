@@ -39,6 +39,7 @@
     -moz-background-size: cover;
     -o-background-size: cover;
     background-size: cover;
+    background-attachment:scroll;
     height: 500px;
   }
 }
@@ -126,11 +127,12 @@
   }
 
   #homepage-bg-image {
-    background: url('homepage-background.jpg') no-repeat center center fixed;
+    background: url('homepage-background.jpg') no-repeat center center;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
     background-size: cover;
+    background-attachment:scroll;
     height: 500px;
   }
 }
