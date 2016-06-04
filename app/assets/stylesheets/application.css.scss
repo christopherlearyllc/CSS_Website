@@ -18,6 +18,29 @@
     font-size: 15px !important;
     vertical-align: 6px !important;
   }
+
+  .hero-text h2 {
+    font-size: 20px !important;
+    margin-bottom: 10px !important;
+  }
+
+  .hero-text {
+    margin: 50 0 30px 0 !important;
+  }
+
+  a.btn.btn-lg.appointment-button {
+    padding: 5px 5px 3px 5px;
+    font-size: 11px;
+  }
+
+  #homepage-bg-image {
+    background: url('homepage-background.jpg') no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    height: 500px;
+  }
 }
 
 @media (max-width: 768px) {
@@ -41,8 +64,12 @@
   }
 
   .hero-text {
-    margin: 0 0 30px 0 !important;
+    margin: 50px 0 30px 0;
     text-align: center;
+  }
+
+  .hero-text h2 {
+    font-size: 30px;
   }
 
   .pitch-text p {
@@ -97,6 +124,15 @@
   .modal-appointment-body h2 {
     font-size: 24px;
   }
+
+  #homepage-bg-image {
+    background: url('homepage-background.jpg') no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    height: 500px;
+  }
 }
 
 @media (min-width: 769px) {
@@ -148,7 +184,7 @@
   }
 
   .hero-text {
-    margin: 50px 0 60px 0;
+    margin: 150px 0 60px 0;
     text-align: center;
   }
 
@@ -225,6 +261,11 @@
 
   .min-height-footer {
     min-height: 800px;
+  }
+
+  #homepage-bg-image {
+    background: url('homepage-background.jpg') no-repeat center center fixed;
+    height: 500px;
   }
 }
 
@@ -427,9 +468,9 @@
 
 .hero-text h2 {
   font-weight: 700;
-  color: #444444;
+  color: #4444;
   font-size: 35px;
-  margin-bottom: 40px;
+  margin-bottom: 20px;
 }
 
 .appointment-button:hover {
@@ -564,4 +605,8 @@
 
 .log-out-nav {
   padding-right: 1px !important;
+}
+
+.navbar {
+  margin-bottom: 0;
 }
