@@ -43,18 +43,9 @@ class HealthHistoriesController < ApplicationController
 
   def create
     @health_history = HealthHistory.new(health_history_params)
-
     if @health_history.save
-
       redirect_to @health_history, notice: "Health history form saved!"
     else
-      @health_history.complaints.build
-      @health_history.surgeries.build
-      @health_history.medications.build
-      @health_history.hospitalizations.build
-      @health_history.allergies.build
-      @health_history.build_personal_disease_history
-      @health_history.build_family_disease_history
       render 'new'
     end
   end
@@ -79,6 +70,23 @@ class HealthHistoriesController < ApplicationController
   private
 
     def health_history_params
-      params.require(:health_history).permit(:first_name, :last_name, :middle_initial, :gender, :date_of_birth, :height, :weight, :address, :home_phone, :work_phone, :physician, :referred_by, :emergency_contact_name, :emergency_contact_phone, :exercise_frequency, :exercise_type, :breakfast, :lunch, :dinner, :snack, :caffeine_cups, :alcohol_consumption, :alcohol_type, :alcohol_abuse, :drinks_per_week, :smoking_habit, :smoking_substance, :years_smoker, :year_quit, :city, :state, :zip, :drink_coffee, :drink_tea, :drink_cola, :drink_other_caffeine, complaints_attributes: [ :id, :symptom, :date_started, :alleviated_by, :aggravated_by, :diagnosis, :inhibited_activity, :treatment, :_destroy ], surgeries_attributes: [ :id, :surgical_procedure, :year, :_destroy ], hospitalizations_attributes: [ :id, :hospitalization_reason, :year, :_destroy ], medications_attributes: [ :id, :name, :strength, :frequency, :_destroy ], allergies_attributes: [ :id, :allergen, :reaction, :_destroy ], personal_disease_history_attributes: [ :id, :heart_disease, :cancer, :diabetes, :hypertension, :thyroid_disorder, :hepatitis, :asthma_allergies, :seizures, :stroke, :neurological_disorders, :substance_abuse, :other, :_destroy], family_disease_history_attributes: [ :id, :heart_disease, :cancer, :diabetes, :hypertension, :thyroid_disorder, :hepatitis, :asthma_allergies, :seizures, :stroke, :neurological_disorders, :substance_abuse, :other, :_destroy])
+      params.require(:health_history).permit(:first_name, :last_name, :middle_initial,
+      :gender, :date_of_birth, :height, :weight, :address, :home_phone, :work_phone,
+      :physician, :referred_by, :emergency_contact_name, :emergency_contact_phone,
+      :exercise_frequency, :exercise_type, :breakfast, :lunch, :dinner, :snack,
+      :caffeine_cups, :alcohol_consumption, :alcohol_type, :alcohol_abuse, :drinks_per_week,
+      :smoking_habit, :smoking_substance, :years_smoker, :year_quit, :city, :state, :zip,
+      :drink_coffee, :drink_tea, :drink_cola, :drink_other_caffeine, :user_id,
+      complaints_attributes: [ :id, :symptom, :date_started, :alleviated_by, :aggravated_by,
+        :diagnosis, :inhibited_activity, :treatment, :_destroy ], surgeries_attributes: [ :id,
+          :surgical_procedure, :year, :_destroy ], hospitalizations_attributes: [ :id,
+            :hospitalization_reason, :year, :_destroy ], medications_attributes: [ :id, :name,
+              :strength, :frequency, :_destroy ], allergies_attributes: [ :id, :allergen,
+                :reaction, :_destroy ], personal_disease_history_attributes: [ :id, :heart_disease,
+                  :cancer, :diabetes, :hypertension, :thyroid_disorder, :hepatitis, :asthma_allergies,
+                  :seizures, :stroke, :neurological_disorders, :substance_abuse, :other, :_destroy],
+                  family_disease_history_attributes: [ :id, :heart_disease, :cancer, :diabetes,
+                    :hypertension, :thyroid_disorder, :hepatitis, :asthma_allergies, :seizures,
+                    :stroke, :neurological_disorders, :substance_abuse, :other, :_destroy])
     end
 end

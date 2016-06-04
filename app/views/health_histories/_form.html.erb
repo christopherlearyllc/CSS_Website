@@ -39,11 +39,11 @@
       <div class="form-blocks"><legend>Personal Info</legend>
         <div class="row">
           <div class="form-group col-sm-12 col-md-2 col-lg-2">
-            <%= f.label :height %>
+            <%= f.label :height, "Height (In Inches)" %>
             <%= f.text_field :height, class: "form-control" %>
           </div>
           <div class="form-group col-sm-12 col-md-2 col-lg-2">
-            <%= f.label :weight %>
+            <%= f.label :weight, "Weight (In Pounds)" %>
             <%= f.text_field :weight, class: "form-control" %>
           </div>
           <div class="form-group col-sm-12 col-md-2 col-lg-2">
@@ -366,6 +366,7 @@
       </div>
   </div>
   </div>
+  <%= f.hidden_field :user_id, :value => current_user.id %>
   <div class="remove-nested button-center">
     <%= f.submit @health_history.new_record? ? "Submit" : "Update", class: "btn btn-primary"%>
   </div>
