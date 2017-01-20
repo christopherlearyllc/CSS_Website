@@ -137,6 +137,12 @@
   }
 }
 
+@media (min-width: 600px) {
+  .about-wrapper {
+    padding: 0 3%;
+  }
+}
+
 @media (min-width: 769px) {
 
   #biz-name {
@@ -308,6 +314,12 @@
   }
 }
 
+@media (min-width: 992px) {
+  .about-wrapper {
+    padding: 0 8%;
+  }
+}
+
 @media (min-width: 950px) and (max-width: 1113px) {
 
   .panel.panel-success {
@@ -350,6 +362,10 @@
 
   .complaint-padding {
     padding-left: 29px;
+  }
+
+  .about-wrapper {
+    padding: 0 12%;
   }
 }
 
@@ -611,4 +627,18 @@
 
 .navbar {
   margin-bottom: 0;
+}
+
+/****** About page ******/
+.about-wrapper {
+  margin-top: 40px;
+}
+
+#about-header {
+  font-weight: 600;
+  color: #FF7D63;
+}
+
+.about-copy {
+  font-size: 18px;
 }
