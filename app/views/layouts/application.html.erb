@@ -22,12 +22,9 @@
       </div>
       <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
         <ul class="nav navbar-nav navbar-right">
-          <li><a href="#">Philosophy</a></li>
-          <li><a href="#">Services</a></li>
-          <li><a href="/pages/about">About</a></li>
+          <li><a href="/pages/principles">Principles</a></li>
+          <li><a href="/pages/about">About Laura</a></li>
           <li><a href="/pages/pricing">Pricing</a></li>
-          <li><a href="#">Contact</a></li>
-
           <% if user_signed_in? %>
             <li><%= link_to('Log Out', destroy_user_session_path, :method => :delete, class: "log-out-nav") %></li>
             <li class="dropdown">

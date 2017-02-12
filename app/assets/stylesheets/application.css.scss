@@ -323,6 +323,10 @@
     width: 75%;
     margin: 0 auto;
   }
+
+  .static-page-quote {
+    width: 72%;
+  }
 }
 
 @media (min-width: 950px) and (max-width: 1113px) {
@@ -668,6 +672,6 @@
   border-bottom: 2px solid #ddd;
 }
 
-#rates-quote {
+.static-page-quote {
   margin-top: 30px;
 }

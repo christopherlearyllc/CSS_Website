@@ -8,4 +8,5 @@ Rails.application.routes.draw do
   get '/pages/welcome'
   get 'pages/about'
   get 'pages/pricing'
+  get 'pages/principles'
 end
