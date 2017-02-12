@@ -13,6 +13,9 @@ class PagesController < ApplicationController
   def pricing
   end
 
-  def principles
+  def acupuncture
+  end
+
+  def approach
   end
 end

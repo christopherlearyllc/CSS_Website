@@ -8,5 +8,6 @@ Rails.application.routes.draw do
   get '/pages/welcome'
   get 'pages/about'
   get 'pages/pricing'
-  get 'pages/principles'
+  get 'pages/acupuncture'
+  get 'pages/approach'
 end
