@@ -7,4 +7,5 @@ Rails.application.routes.draw do
   get '/pages/home'
   get '/pages/welcome'
   get 'pages/about'
+  get 'pages/pricing'
 end
