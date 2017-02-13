@@ -1,12 +1,13 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Laura Zanieski Acupuncture | Chinese Herbal Medicine | Tui Na</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
-  <meta name="description" content="Laura Zanieski practices acupuncture, Chinese herbal medicine, and Tui Na in Seattle. Treatments help maintain wellness, decrease stress, and alleviate pain." />
+  <% if content_for?(:head) %>
+      <%= yield(:head) %>
+    <% end %>
 </head>
 <body>
   <nav class="navbar navbar-default">
@@ -22,11 +23,11 @@
       </div>
       <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
         <ul class="nav navbar-nav navbar-right">
-          <li><a href="#">Philosophy</a></li>
-          <li><a href="#">Services</a></li>
-          <li><a href="/pages/about">About</a></li>
-          <li><a href="#">Contact</a></li>
-
+          <li><a href="/pages/home">Home</a></li>
+          <li><a href="/pages/acupuncture">Acupuncture</a></li>
+          <li><a href="/pages/approach">Approach</a></li>
+          <li><a href="/pages/about">About Laura</a></li>
+          <li><a href="/pages/pricing">Pricing</a></li>
           <% if user_signed_in? %>
             <li><%= link_to('Log Out', destroy_user_session_path, :method => :delete, class: "log-out-nav") %></li>
             <li class="dropdown">

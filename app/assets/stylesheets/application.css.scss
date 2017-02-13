@@ -138,7 +138,7 @@
 }
 
 @media (min-width: 600px) {
-  .about-wrapper {
+  .static-wrapper {
     padding: 0 3%;
   }
 }
@@ -315,8 +315,33 @@
 }
 
 @media (min-width: 992px) {
-  .about-wrapper {
+  .static-wrapper {
     padding: 0 8%;
+  }
+
+  #pricing-table {
+    width: 75%;
+    margin: 0 auto;
+  }
+
+  .static-page-quote {
+    width: 72%;
+  }
+
+}
+
+@media (min-width: 768px) {
+  .laura-about-img {
+    float: right;
+    margin: 0 0 2% 2%;
+    max-width: 45%;
+  }
+}
+
+@media (max-width: 767px) {
+  .laura-about-img {
+    max-width: 100%;
+    margin-bottom: 20px;
   }
 }
 
@@ -364,12 +389,16 @@
     padding-left: 29px;
   }
 
-  .about-wrapper {
+  .static-wrapper {
     padding: 0 12%;
   }
 }
 
 /****** Global Styles ******/
+.container {
+  min-height: 700px;
+}
+
 .year, .month, .day {
   display: inline-block;
   vertical-align: middle;
@@ -629,16 +658,40 @@
   margin-bottom: 0;
 }
 
-/****** About page ******/
-.about-wrapper {
+/****** Static pages ******/
+.static-wrapper {
   margin-top: 40px;
 }
 
-#about-header {
+.static-header {
   font-weight: 600;
   color: #FF7D63;
 }
 
-.about-copy {
+.static-page-paragraph {
   font-size: 18px;
+}
+
+/****** Pricing page ******/
+#pricing-table {
+  margin-top: 40px;
+  margin-bottom: 40px;
+}
+
+#pricing-table th {
+  font-size: 17px;
+  color: #FF7D63;
+}
+
+#pricing-table td {
+  font-size: 16px;
+}
+
+.table>thead>tr>th {
+  vertical-align: bottom;
+  border-bottom: 2px solid #ddd;
+}
+
+.static-page-quote {
+  margin-top: 30px;
 }
