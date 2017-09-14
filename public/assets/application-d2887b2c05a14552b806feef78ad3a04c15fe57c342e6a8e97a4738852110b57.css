@@ -13459,3 +13459,8 @@ a.list-group-item-danger.active:hover, a.list-group-item-danger.active:focus {
 .static-page-quote {
   margin-top: 30px;
 }
+
+/* line 699, /Users/ryanmcmahon/Desktop/my_apps/laura/lmz-website/app/assets/stylesheets/application.css.scss */
+.accupuncture-benefits-list li {
+  font-size: 17px;
+}
